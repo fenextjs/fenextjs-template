@@ -4,7 +4,7 @@ import { StoryFn, Meta } from "@storybook/react";
 import { Img, ImgProps } from "./index";
 
 export default {
-    title: "Component/Img",
+    title: "UIFenextjs/Img",
     component: Img,
 } as Meta;
 

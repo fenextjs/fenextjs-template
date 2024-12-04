@@ -4,7 +4,7 @@ import { StoryFn, Meta } from "@storybook/react";
 import { Container, ContainerProps } from "./index";
 
 export default {
-    title: "Component/Container",
+    title: "UIFenextjs/Container",
     component: Container,
 } as Meta;
 

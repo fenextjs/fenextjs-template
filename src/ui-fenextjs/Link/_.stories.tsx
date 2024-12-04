@@ -4,7 +4,7 @@ import { StoryFn, Meta } from "@storybook/react";
 import { Link, LinkProps } from "./index";
 
 export default {
-    title: "Component/Link",
+    title: "UIFenextjs/Link",
     component: Link,
 } as Meta;
 

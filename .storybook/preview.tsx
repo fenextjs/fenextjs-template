@@ -1,12 +1,12 @@
 import React from "react";
 import type { Preview } from "@storybook/react";
-import { PageProgress } from "../src/PageProgress";
-import { NotificationPop } from "../src/Notification/Pop";
-import { InputGoogleLoadScript } from "../src/Input/Google/LoadScript";
+import { PageProgress } from "fenextjs";
+import { NotificationPop } from "fenextjs";
+import { InputGoogleLoadScript } from "fenextjs";
 import { useReportWebVitals } from "next/web-vitals";
 
 import "../styles/index.css";
-import "../styles/font.css";
+
 import { env_log } from "fenextjs-functions";
 
 const preview: Preview = {

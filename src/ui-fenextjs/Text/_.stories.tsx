@@ -4,7 +4,7 @@ import { StoryFn, Meta } from "@storybook/react";
 import { Text, TextProps } from "./index";
 
 export default {
-    Text: "Component/Text",
+    title: "UIFenextjs/Text",
     component: Text,
 } as Meta;
 

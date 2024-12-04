@@ -4,7 +4,7 @@ import { StoryFn, Meta } from "@storybook/react";
 import { Box, BoxProps } from "./index";
 
 export default {
-    title: "Component/Box",
+    title: "UIFenextjs/Box",
     component: Box,
 } as Meta;
 

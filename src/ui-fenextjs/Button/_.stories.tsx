@@ -4,7 +4,7 @@ import { StoryFn, Meta } from "@storybook/react";
 import { Button, ButtonProps } from "./index";
 
 export default {
-    title: "Component/Button",
+    title: "UIFenextjs/Button",
     component: Button,
 } as Meta;
 
