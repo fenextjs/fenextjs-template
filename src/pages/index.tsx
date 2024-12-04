@@ -1,3 +1,11 @@
+import {
+    Button
+} from '@/ui-fenext'
+
 export default function Home() {
-    return <></>;
+    return <>
+        <Button>
+            Fenextjs Doc
+        </Button>
+    </>;
 }

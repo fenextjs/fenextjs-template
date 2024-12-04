@@ -1,10 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "jsx": "preserve",
-    "esModuleInterop": true,
-    "strict": true,
+    "target": "ES2016",
     "lib": [
       "dom",
       "dom.iterable",
@@ -12,56 +8,21 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
+    "strict": true,
     "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "jsx": "preserve",
     "incremental": true,
-    
     "paths": {
       "@/*": [
         "./src/*"
-      ],
-      "fenextjs/*": [
-        "../../fenextjs/fenextjs/*"
-      ],
-      "fenextjs-component/*": [
-        "../../fenextjs/fenextjs-component/*"
-      ],
-      "fenextjs-date/*": [
-        "../../fenextjs/fenextjs-date/*"
-      ],
-      "fenextjs-documentation/*": [
-        "../../fenextjs/fenextjs-documentation/*"
-      ],
-      "fenextjs-error/*": [
-        "../../fenextjs/fenextjs-error/*"
-      ],
-      "fenextjs-export/*": [
-        "../../fenextjs/fenextjs-export/*"
-      ],
-      "fenextjs-firebase/*": [
-        "../../fenextjs/fenextjs-firebase/*"
-      ],
-      "fenextjs-functions/*": [
-        "../../fenextjs/fenextjs-functions/*"
-      ],
-      "fenextjs-hook/*": [
-        "../../fenextjs/fenextjs-hook/*"
-      ],
-      "fenextjs-img-placeholder/*": [
-        "../../fenextjs/fenextjs-img-placeholder/*"
-      ],
-      "fenextjs-interface/*": [
-        "../../fenextjs/fenextjs-interface/*"
-      ],
-      "fenextjs-svg/*": [
-        "../../fenextjs/fenextjs-svg/*"
-      ],
-      "fenextjs-validator/*": [
-        "../../fenextjs/fenextjs-validator/*"
       ]
-    }
+    },
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
     "next-env.d.ts",
