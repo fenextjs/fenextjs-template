@@ -1,11 +1,9 @@
-import {
-    Button
-} from '@/ui-fenext'
+import { FenextjsInfo,FenextjsPage } from '@/components';
 
 export default function Home() {
     return <>
-        <Button>
-            Fenextjs Doc
-        </Button>
+        <FenextjsPage>
+            <FenextjsInfo />
+        </FenextjsPage>
     </>;
 }

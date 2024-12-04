@@ -14,7 +14,7 @@ export const Button = ({
 }: ButtonProps) => {
     return (
         <FenextjsButton
-            className={`my-project-btn ${className}`}
+            className={`my-project-button ${className}`}
             {...props}
         >
             {children}
