@@ -26,7 +26,7 @@ export const FenextjsInfo = ({ }: FenextjsInfoProps) => {
                 Gracias por usar Fenextjs. Esta plantilla tiene una estructura que te ayudará a usar fenextjs.
             </Text>
             <Text>
-                Recuerda que puedes agregar todos los componentes de fenextjs, que necesites, a la carpeta <Text tag='strong'>ui-fenextjs</Text>,
+                Recuerda que puedes agregar todos los componentes de fenextjs, que necesites, a la carpeta ui-fenextjs,
                 para personalizarlo en estilos o agregarle mas funcionalidades
             </Text>
             <Text>
@@ -34,7 +34,7 @@ export const FenextjsInfo = ({ }: FenextjsInfoProps) => {
             </Text>
             <Link href={'https://fenextjs-doc.vercel.app'} target='_blank'>
                 <Button>
-                    Fenextjs Doc
+                    Fenextjs Documentación
                 </Button>
             </Link>
         </Box>

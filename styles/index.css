@@ -7306,4 +7306,9 @@ body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select
   padding-block: 1rem;
 }
 
+.form-login {
+  display: grid;
+  gap: 1rem;
+}
+
 /*# sourceMappingURL=index.css.map */
