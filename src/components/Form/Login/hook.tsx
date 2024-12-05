@@ -1,4 +1,10 @@
-import { ErrorFenextjs, sleep, useData, useNotification } from 'fenextjs';
+import {
+    env_log,
+    ErrorFenextjs,
+    sleep,
+    useData,
+    useNotification,
+} from 'fenextjs';
 import { IFormLogin } from './interface';
 import { FormLoginValidator } from './validator';
 
@@ -16,6 +22,9 @@ export const useFormLogin = ({
     const HOOK = useData<IFormLogin>(defaultValue, {
         validator: FormLoginValidator,
         onSubmitData: async (data) => {
+            env_log(data, {
+                name: 'DATA',
+            });
             await sleep(2000);
             if (parseInt(`${Math.random() * 10}`) % 2 === 0) {
                 throw new ErrorFenextjs({

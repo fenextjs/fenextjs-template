@@ -14,6 +14,5 @@ const Profile: StoryFn<PropsWithChildren<FormProps>> = (args) => (
 
 export const Index = Profile.bind({});
 const args : FormProps = {
-    data:{}
 }
 Index.args = args
