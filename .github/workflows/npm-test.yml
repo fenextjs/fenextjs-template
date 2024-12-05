@@ -26,8 +26,6 @@ jobs:
                   key: ${{ runner.os }}-validation-pipeline-${{ hashFiles('**/package-lock.json') }}
             - name: Install
               run: |
-                  npm config set @xell-shop:registry https://npm.pkg.github.com
-                  echo "//npm.pkg.github.com/:_authToken=${{ secrets.PIPELINE_TOKEN }}" >> ~/.npmrc
                   npm i
 
     validation:
