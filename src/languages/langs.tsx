@@ -35,4 +35,16 @@ export const LANGUAGE_LIST: LanguageListProps<LIST_LANGS_TYPE> = {
         es: 'Enviar',
         en: 'Submit',
     },
+    'Correo requerido': {
+        es: 'Correo requerido',
+        en: 'Email required',
+    },
+    'Correo invalido': {
+        es: 'Correo invalido',
+        en: 'Email invalid',
+    },
+    'Contraseña requerida': {
+        es: 'Contraseña requerida',
+        en: 'Password required',
+    },
 };
