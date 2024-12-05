@@ -7,6 +7,6 @@ export const useLang = () => {
     return useLanguage<LIST_LANGS_TYPE>({
         langs: LIST_LANGS,
         listTranductions: LANGUAGE_LIST,
-        defaultLang: 'es'
+        defaultLang: 'es',
     });
 };

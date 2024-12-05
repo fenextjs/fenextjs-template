@@ -4,9 +4,7 @@ import {
     ContainerProps as FenextjsContainerProps,
 } from 'fenextjs';
 
-
-export interface ContainerProps extends FenextjsContainerProps {
-}
+export interface ContainerProps extends FenextjsContainerProps {}
 export const Container = ({
     children,
     className = '',

@@ -5,14 +5,12 @@ import {
 } from 'fenextjs';
 import { useLang } from '@/languages';
 
-
-export interface InputPasswordProps extends FenextjsInputPasswordProps {
-}
+export interface InputPasswordProps extends FenextjsInputPasswordProps {}
 export const InputPassword = ({
     className = '',
     ...props
 }: InputPasswordProps) => {
-    const {onTranslate} = useLang()
+    const { onTranslate } = useLang();
     return (
         <FenextjsInputPassword
             className={`my-project-input-password ${className}`}

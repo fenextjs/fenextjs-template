@@ -1,16 +1,13 @@
-import React, { ReactNode } from 'react'
-import {Container
-} from '@/ui-fenextjs'
+import React, { ReactNode } from 'react';
+import { Container } from '@/ui-fenextjs';
 export interface FenextjsPageProps {
-    children?:ReactNode
+    children?: ReactNode;
 }
 
-export const FenextjsPage = ({ children}: FenextjsPageProps) => {
-
-    return <>
-
-        <Container className='fenextjs-page'>
-            {children}
-        </Container>
-    </>
-}
+export const FenextjsPage = ({ children }: FenextjsPageProps) => {
+    return (
+        <>
+            <Container className="fenextjs-page">{children}</Container>
+        </>
+    );
+};

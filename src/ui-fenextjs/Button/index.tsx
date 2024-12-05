@@ -5,15 +5,9 @@ import {
 } from 'fenextjs';
 import { useLang } from '@/languages';
 
-
-export interface ButtonProps extends FenextjsButtonProps {
-}
-export const Button = ({
-    children,
-    className = '',
-    ...props
-}: ButtonProps) => {
-    const {onTranslate} = useLang()
+export interface ButtonProps extends FenextjsButtonProps {}
+export const Button = ({ children, className = '', ...props }: ButtonProps) => {
+    const { onTranslate } = useLang();
     return (
         <FenextjsButton
             className={`my-project-button ${className}`}

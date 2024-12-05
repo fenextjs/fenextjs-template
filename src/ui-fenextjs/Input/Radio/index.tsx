@@ -5,14 +5,12 @@ import {
 } from 'fenextjs';
 import { useLang } from '@/languages';
 
-
-export interface InputRadioProps<T> extends FenextjsInputRadioProps<T> {
-}
+export interface InputRadioProps<T> extends FenextjsInputRadioProps<T> {}
 export const InputRadio = <T,>({
     classNameContent = '',
     ...props
 }: InputRadioProps<T>) => {
-    const {onTranslate} = useLang()
+    const { onTranslate } = useLang();
     return (
         <FenextjsInputRadio
             classNameContent={`my-project-input-radio ${classNameContent}`}

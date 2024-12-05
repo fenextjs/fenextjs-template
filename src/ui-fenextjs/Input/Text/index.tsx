@@ -5,14 +5,9 @@ import {
 } from 'fenextjs';
 import { useLang } from '@/languages';
 
-
-export interface InputTextProps extends FenextjsInputTextProps {
-}
-export const InputText = ({
-    className = '',
-    ...props
-}: InputTextProps) => {
-    const {onTranslate} = useLang()
+export interface InputTextProps extends FenextjsInputTextProps {}
+export const InputText = ({ className = '', ...props }: InputTextProps) => {
+    const { onTranslate } = useLang();
     return (
         <FenextjsInputText
             className={`my-project-input-text ${className}`}

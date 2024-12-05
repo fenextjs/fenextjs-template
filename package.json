@@ -18,8 +18,9 @@
     "storybook": "storybook dev -p 6006",
     "update-i": "bun i || pnpm i || npm i",
     "remove-bun-lock": "rm -r bun.lockb || true",
+    "remove-pnpm-lock": "rm -rf pnpm-lock.yaml || true",
     "remove-npm-lock": "rm -r package-lock.json || true",
-    "remove-lock": "npm run remove-bun-lock && npm run npm-lock",
+    "remove-lock": "npm run remove-bun-lock && npm run remove-pnpm-lock && npm run remove-npm-lock",
     "remove-node-module": "rm -r node_modules || true",
     "remove": "npm run remove-node-module && npm run remove-lock",
     "update-package": "ncu -u '/^fenextjs.*$/' country-state-city-nextjs",
@@ -27,7 +28,7 @@
     "u": "npm run update"
   },
   "dependencies": {
-    "fenextjs": "13.5.7",
+    "fenextjs": "13.6.0",
     "next": "13.5.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"

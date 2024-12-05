@@ -1,42 +1,42 @@
-import { ErrorFenextjs, sleep, useData, useNotification } from "fenextjs"
-import { IFormLogin } from "./interface"
-import { FormLoginValidator } from "./validator"
+import { ErrorFenextjs, sleep, useData, useNotification } from 'fenextjs';
+import { IFormLogin } from './interface';
+import { FormLoginValidator } from './validator';
 
 export interface useFormLoginProps {
-    defaultValue?: IFormLogin
+    defaultValue?: IFormLogin;
 }
 
 export const useFormLogin = ({
     defaultValue = {
-        email: "",
-        password: ""
-    }
+        email: '',
+        password: '',
+    },
 }: useFormLoginProps) => {
-    const { pop } = useNotification({})
+    const { pop } = useNotification({});
     const HOOK = useData<IFormLogin>(defaultValue, {
-        validator:FormLoginValidator,
+        validator: FormLoginValidator,
         onSubmitData: async (data) => {
-            await sleep(2000)
+            await sleep(2000);
             if (parseInt(`${Math.random() * 10}`) % 2 === 0) {
                 throw new ErrorFenextjs({
-                    message:"Error"
-                })
+                    message: 'Error',
+                });
             }
         },
         onAfterSubmitDataOk: () => {
             pop({
-                message: "Login exitoso",
-                type: "OK"
-            })
+                message: 'Login exitoso',
+                type: 'OK',
+            });
         },
         onAfterSubmitDataError: () => {
             pop({
-                message: "Login fallido",
-                type: "ERROR"
-            })
-        }
-    })
+                message: 'Login fallido',
+                type: 'ERROR',
+            });
+        },
+    });
     return {
-        ...HOOK
-    }
-}
+        ...HOOK,
+    };
+};
