@@ -16,6 +16,7 @@
     "format": "npm run prettier:fix && npm run lint:fix",
     "flb": "npm run format && npm run lint && npm run build && npm run sass-min",
     "storybook": "storybook dev -p 6006",
+    "update-lock": "npm i",
     "update-i": "bun i || pnpm i || npm i",
     "remove-bun-lock": "rm -r bun.lockb || true",
     "remove-pnpm-lock": "rm -rf pnpm-lock.yaml || true",
@@ -23,9 +24,9 @@
     "remove-lock": "npm run remove-bun-lock && npm run remove-pnpm-lock && npm run remove-npm-lock",
     "remove-node-module": "rm -r node_modules || true",
     "remove": "npm run remove-node-module && npm run remove-lock",
-    "update-package": "ncu -u '/^fenextjs.*$/' country-state-city-nextjs",
-    "update": "npm run update-package && npm run remove && npm run update-i && npm run flb",
-    "u": "npm run update"
+    "update-package": "ncu -u '/^fenextjs.*$/' '/^xell-ui-.*$/' '/^@xell-shop.*$/'",
+    "update": "npm run update-package && npm run remove && npm run update-i && npm run update-lock && npm run flb",
+    "u": "npm run update && git add . && git commit -m update && git push"
   },
   "dependencies": {
     "fenextjs": "13.6.0",
