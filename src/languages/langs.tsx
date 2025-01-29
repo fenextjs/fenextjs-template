@@ -47,8 +47,12 @@ export const LANGUAGE_LIST: LanguageListProps<LIST_LANGS_TYPE> = {
         es: 'Contraseña requerida',
         en: 'Password required',
     },
-    Entrar:{
-        en:"Login",
-        es:"Entrar"
-    }
+    Entrar: {
+        en: 'Login',
+        es: 'Entrar',
+    },
+    Idiomas: {
+        es: 'Idiomas',
+        en: 'Languages',
+    },
 };

@@ -1,11 +1,4 @@
-import {
-    env_log,
-    ErrorFenextjs,
-    sleep,
-    useAlert,
-    useData,
-    useNotification,
-} from 'fenextjs';
+import { env_log, sleep, useAlert, useData, useNotification } from 'fenextjs';
 import { IFormLogin } from './interface';
 import { FormLoginValidator } from './validator';
 import { useUser } from '@/hook/useUser';
@@ -20,7 +13,7 @@ export const useFormLogin = ({
         password: '',
     },
 }: useFormLoginProps) => {
-    const { onLogin } = useUser({})
+    const { onLogin } = useUser({});
     const { pop } = useNotification({});
     const { setAlert, onClearAlert } = useAlert({});
     const HOOK = useData<IFormLogin>(defaultValue, {
@@ -44,13 +37,13 @@ export const useFormLogin = ({
                 message: 'Login exitoso',
                 type: 'OK',
             });
-            onClearAlert()
+            onClearAlert();
             onLogin({
-                id:"1",
-                name:"Name User",
-                email:"Email@user.com",
-                token:"token user",
-            })
+                id: '1',
+                name: 'Name User',
+                email: 'Email@user.com',
+                token: 'token user',
+            });
         },
         onAfterSubmitDataError: () => {
             setAlert({

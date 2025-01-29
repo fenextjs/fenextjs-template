@@ -1,4 +1,3 @@
-
 import { useUser } from '@/hook/useUser';
 import PageLogin from '@/pages/auth/login';
 import { ReactNode } from 'react';
@@ -8,13 +7,9 @@ export interface LayoutAuthProps {
 }
 
 export const LayoutAuth = ({ children }: LayoutAuthProps) => {
-    const { isValidUser } = useUser({})
-    if(!isValidUser){
-        return <PageLogin/>
+    const { isValidUser } = useUser({});
+    if (!isValidUser) {
+        return <PageLogin />;
     }
-    return (
-        <>
-            {children}
-        </>
-    );
+    return <>{children}</>;
 };

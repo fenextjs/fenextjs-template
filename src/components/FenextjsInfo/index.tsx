@@ -4,9 +4,9 @@ import { Link } from '@/ui-fenextjs/Link';
 import { Text } from '@/ui-fenextjs/Text';
 import { Title } from '@/ui-fenextjs/Title';
 import React from 'react';
-export interface FenextjsInfoProps { }
+export interface FenextjsInfoProps {}
 
-export const FenextjsInfo = ({ }: FenextjsInfoProps) => {
+export const FenextjsInfo = ({}: FenextjsInfoProps) => {
     return (
         <>
             <div className="fenextjs-info">

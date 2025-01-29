@@ -1,11 +1,11 @@
-.layout-login{
+.layout-login {
     .fenext-layout-grid-mt-children {
         display: grid;
-        &:has(.fenext-layout-grid-alert){
+        &:has(.fenext-layout-grid-alert) {
             grid-template-rows: auto 1fr;
         }
     }
-    &-content{
+    &-content {
         padding-block: 1rem;
         display: grid;
         align-items: center;

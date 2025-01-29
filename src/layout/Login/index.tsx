@@ -11,10 +11,11 @@ export interface LayoutLoginProps {
 export const LayoutLogin = ({ children }: LayoutLoginProps) => {
     return (
         <>
-            <LayoutGridMenuTop className='layout-login'
-                menuTop={<HeaderLogin/>}
+            <LayoutGridMenuTop
+                className="layout-login"
+                menuTop={<HeaderLogin />}
             >
-                <div className='layout-login-content'>
+                <div className="layout-login-content">
                     <Container>
                         <FenextjsInfo />
                         <div>{children}</div>

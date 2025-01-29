@@ -5,9 +5,9 @@ import { useLang } from '@/languages';
 import { Container } from '@/ui-fenextjs/Container';
 import { InputRadio } from '@/ui-fenextjs/Input';
 import { Img } from '@/ui-fenextjs/Img';
-export interface ChangeLangProps { }
+export interface ChangeLangProps {}
 
-export const ChangeLang = ({ }: ChangeLangProps) => {
+export const ChangeLang = ({}: ChangeLangProps) => {
     const { setCurrentLang, currentLang } = useLang();
     return (
         <>
@@ -22,24 +22,28 @@ export const ChangeLang = ({ }: ChangeLangProps) => {
                         {
                             id: 'es',
                             data: 'es',
-                            label: <>
-                                <Img
-                                    src={
-                                        "https://country-state-city-nextjs.vercel.app/country/28_espana/img.png"
-                                    }
-                                />
-                            </>,
+                            label: (
+                                <>
+                                    <Img
+                                        src={
+                                            'https://country-state-city-nextjs.vercel.app/country/28_espana/img.png'
+                                        }
+                                    />
+                                </>
+                            ),
                         },
                         {
                             id: 'en',
                             data: 'en',
-                            label: <>
-                                <Img
-                                    src={
-                                        "https://country-state-city-nextjs.vercel.app/country/55_estados_unidos/img.png"
-                                    }
-                                />
-                            </>,
+                            label: (
+                                <>
+                                    <Img
+                                        src={
+                                            'https://country-state-city-nextjs.vercel.app/country/55_estados_unidos/img.png'
+                                        }
+                                    />
+                                </>
+                            ),
                         },
                     ]}
                     onChange={(e) => {
