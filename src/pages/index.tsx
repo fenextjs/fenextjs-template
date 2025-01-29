@@ -1,21 +1,5 @@
-import {
-    ChangeLang,
-    FenextjsInfo,
-    FenextjsPage,
-    FormLogin,
-} from '@/components';
-import { Cols } from '@/ui-fenextjs';
+export const PageHome = () => {
+    return <></>;
+};
 
-export default function Home() {
-    return (
-        <>
-            <FenextjsPage>
-                <FenextjsInfo />
-                <Cols nCols={2}>
-                    <FormLogin />
-                    <ChangeLang />
-                </Cols>
-            </FenextjsPage>
-        </>
-    );
-}
+export default PageHome;

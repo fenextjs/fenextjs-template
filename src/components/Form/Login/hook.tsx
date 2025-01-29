@@ -2,6 +2,7 @@ import {
     env_log,
     ErrorFenextjs,
     sleep,
+    useAlert,
     useData,
     useNotification,
 } from 'fenextjs';
@@ -19,6 +20,7 @@ export const useFormLogin = ({
     },
 }: useFormLoginProps) => {
     const { pop } = useNotification({});
+    const { setAlert, onClearAlert } = useAlert({});
     const HOOK = useData<IFormLogin>(defaultValue, {
         validator: FormLoginValidator,
         onSubmitData: async (data) => {
@@ -32,14 +34,23 @@ export const useFormLogin = ({
                 });
             }
         },
+        onBeforeSubmitData: ({ isValid }) => {
+            if (isValid != true) {
+                setAlert({
+                    message: isValid?.msg ?? isValid?.message ?? '',
+                    type: 'WARNING',
+                });
+            }
+        },
         onAfterSubmitDataOk: () => {
             pop({
                 message: 'Login exitoso',
                 type: 'OK',
             });
+            onClearAlert()
         },
         onAfterSubmitDataError: () => {
-            pop({
+            setAlert({
                 message: 'Login fallido',
                 type: 'ERROR',
             });

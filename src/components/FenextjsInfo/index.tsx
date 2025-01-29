@@ -1,13 +1,19 @@
+import { Button } from '@/ui-fenextjs/Button';
+import { Img } from '@/ui-fenextjs/Img';
+import { Link } from '@/ui-fenextjs/Link';
+import { Text } from '@/ui-fenextjs/Text';
+import { Title } from '@/ui-fenextjs/Title';
 import React from 'react';
-import { Button, Title, Text, Box, Img, Link } from '@/ui-fenextjs';
-export interface FenextjsInfoProps {}
+export interface FenextjsInfoProps { }
 
-export const FenextjsInfo = ({}: FenextjsInfoProps) => {
+export const FenextjsInfo = ({ }: FenextjsInfoProps) => {
     return (
         <>
-            <Box className="fenextjs-info">
-                <Img src="https://fenextjs-doc.vercel.app/favicon.png" />
-                <Title>Fenextjs</Title>
+            <div className="fenextjs-info">
+                <div className="fenextjs-info-top">
+                    <Img src="https://fenextjs-doc.vercel.app/favicon.png" />
+                    <Title>Fenextjs</Title>
+                </div>
                 <Text>
                     Gracias por usar Fenextjs. Esta plantilla tiene una
                     estructura que te ayudará a usar fenextjs.
@@ -24,7 +30,7 @@ export const FenextjsInfo = ({}: FenextjsInfoProps) => {
                 <Link href={'https://fenextjs-doc.vercel.app'} target="_blank">
                     <Button>Fenextjs Documentación</Button>
                 </Link>
-            </Box>
+            </div>
         </>
     );
 };

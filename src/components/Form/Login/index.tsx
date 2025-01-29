@@ -1,12 +1,10 @@
 import React from 'react';
-import {
-    Button,
-    ErrorComponent,
-    Form,
-    InputPassword,
-    InputText,
-} from '@/ui-fenextjs';
 import { useFormLogin } from './hook';
+import { Form } from '@/ui-fenextjs/Form';
+import { InputPassword, InputText } from '@/ui-fenextjs/Input';
+import { ErrorComponent } from '@/ui-fenextjs/ErrorComponent';
+import { Button } from '@/ui-fenextjs/Button';
+import { Title } from '@/ui-fenextjs/Title';
 export interface FormLoginProps {}
 
 export const FormLogin = ({}: FormLoginProps) => {
@@ -22,6 +20,7 @@ export const FormLogin = ({}: FormLoginProps) => {
     return (
         <>
             <Form className="form-login">
+                <Title>Entrar</Title>
                 <InputText
                     label="Correo"
                     placeholder="Correo"
@@ -41,8 +40,10 @@ export const FormLogin = ({}: FormLoginProps) => {
                 <Button
                     disabled={isValidData != true}
                     onClick={onSubmitData}
+                    onClickDisabled={onSubmitData}
                     loader={loaderSubmit}
                     full={true}
+                    isBtn={false}
                 >
                     Enviar
                 </Button>
