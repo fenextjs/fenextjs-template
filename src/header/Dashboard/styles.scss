@@ -1,0 +1,15 @@
+.header-dashboard{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+    padding-inline: 1rem;
+    &-logo{
+        display: grid;
+        grid-template-columns: 1.5rem 1fr;
+        gap: .5rem;
+        align-items: center;
+        text-decoration: none;
+    }
+}

@@ -7280,6 +7280,24 @@ body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select
   align-items: center;
 }
 
+.layout-dashboard .fenext-layout-grid-mt-children {
+  display: grid;
+}
+.layout-dashboard .fenext-layout-grid-mt-children:has(.fenext-layout-grid-alert) {
+  grid-template-rows: auto 1fr;
+}
+.layout-dashboard-content {
+  padding-block: 1rem;
+  display: grid;
+  align-items: center;
+}
+.layout-dashboard-content .fenext-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
 .header-login {
   display: flex;
   justify-content: space-between;
@@ -7287,6 +7305,22 @@ body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select
   align-items: center;
 }
 .header-login-logo {
+  display: grid;
+  grid-template-columns: 1.5rem 1fr;
+  gap: 0.5rem;
+  align-items: center;
+  text-decoration: none;
+}
+
+.header-dashboard {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  width: 100%;
+  padding-inline: 1rem;
+}
+.header-dashboard-logo {
   display: grid;
   grid-template-columns: 1.5rem 1fr;
   gap: 0.5rem;

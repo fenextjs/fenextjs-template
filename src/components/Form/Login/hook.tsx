@@ -8,6 +8,7 @@ import {
 } from 'fenextjs';
 import { IFormLogin } from './interface';
 import { FormLoginValidator } from './validator';
+import { useUser } from '@/hook/useUser';
 
 export interface useFormLoginProps {
     defaultValue?: IFormLogin;
@@ -19,6 +20,7 @@ export const useFormLogin = ({
         password: '',
     },
 }: useFormLoginProps) => {
+    const { onLogin } = useUser({})
     const { pop } = useNotification({});
     const { setAlert, onClearAlert } = useAlert({});
     const HOOK = useData<IFormLogin>(defaultValue, {
@@ -28,11 +30,6 @@ export const useFormLogin = ({
                 name: 'DATA',
             });
             await sleep(2000);
-            if (parseInt(`${Math.random() * 10}`) % 2 === 0) {
-                throw new ErrorFenextjs({
-                    message: 'Error',
-                });
-            }
         },
         onBeforeSubmitData: ({ isValid }) => {
             if (isValid != true) {
@@ -48,6 +45,12 @@ export const useFormLogin = ({
                 type: 'OK',
             });
             onClearAlert()
+            onLogin({
+                id:"1",
+                name:"Name User",
+                email:"Email@user.com",
+                token:"token user",
+            })
         },
         onAfterSubmitDataError: () => {
             setAlert({
