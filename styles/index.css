@@ -7253,6 +7253,11 @@ body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select
   gap: 1rem;
 }
 
+.form-forgot-password {
+  display: grid;
+  gap: 1rem;
+}
+
 .change-lang {
   align-items: flex-start;
   padding-block: 1rem;

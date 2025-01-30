@@ -9,15 +9,12 @@ export interface useFormRegisterProps {
 }
 
 export const useFormRegister = ({
-    defaultValue = {
-        email: '',
-        password: '',
-    },
+    defaultValue
 }: useFormRegisterProps) => {
     const router = useRouter()
     const { pop } = useNotification({});
     const { setAlert, onClearAlert } = useAlert({});
-    const HOOK = useData<IFormRegister>(defaultValue, {
+    const HOOK = useData<IFormRegister>((defaultValue ?? {}) as IFormRegister, {
         validator: FormRegisterValidator,
         onSubmitData: async (data) => {
             env_log(data, {

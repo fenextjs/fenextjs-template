@@ -1,20 +1,18 @@
 import { env_log, sleep, useAlert, useData, useNotification } from 'fenextjs';
-import { IFormLogin } from './interface';
-import { FormLoginValidator } from './validator';
-import { useUser } from '@/hook/useUser';
+import { IFormForgotPassword } from './interface';
+import { FormForgotPasswordValidator } from './validator';
 
-export interface useFormLoginProps {
-    defaultValue?: IFormLogin;
+export interface useFormForgotPasswordProps {
+    defaultValue?: IFormForgotPassword;
 }
 
-export const useFormLogin = ({
-    defaultValue ,
-}: useFormLoginProps) => {
-    const { onLogin } = useUser({});
+export const useFormForgotPassword = ({
+    defaultValue 
+}: useFormForgotPasswordProps) => {
     const { pop } = useNotification({});
     const { setAlert, onClearAlert } = useAlert({});
-    const HOOK = useData<IFormLogin>((defaultValue ?? {}) as IFormLogin, {
-        validator: FormLoginValidator,
+    const HOOK = useData<IFormForgotPassword>((defaultValue ?? {})as IFormForgotPassword, {
+        validator: FormForgotPasswordValidator,
         onSubmitData: async (data) => {
             env_log(data, {
                 name: 'DATA',
@@ -31,20 +29,14 @@ export const useFormLogin = ({
         },
         onAfterSubmitDataOk: () => {
             pop({
-                message: 'Login exitoso',
+                message: 'Envio de Correo exitoso',
                 type: 'OK',
             });
             onClearAlert();
-            onLogin({
-                id: '1',
-                name: 'Name User',
-                email: 'Email@user.com',
-                token: 'token user',
-            });
         },
         onAfterSubmitDataError: () => {
             setAlert({
-                message: 'Login fallido',
+                message: 'Envio de Correo fallido',
                 type: 'ERROR',
             });
         },

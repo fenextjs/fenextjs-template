@@ -1,5 +1,5 @@
 import React from 'react';
-import { useFormLogin } from './hook';
+import { useFormForgotPassword } from './hook';
 import { Form } from '@/ui-fenextjs/Form';
 import { InputPassword, InputText } from '@/ui-fenextjs/Input';
 import { ErrorComponent } from '@/ui-fenextjs/ErrorComponent';
@@ -7,9 +7,9 @@ import { Button } from '@/ui-fenextjs/Button';
 import { Title } from '@/ui-fenextjs/Title';
 import { Link } from '@/ui-fenextjs/Link';
 import { URL } from '@/url';
-export interface FormLoginProps { }
+export interface FormForgotPasswordProps { }
 
-export const FormLogin = ({ }: FormLoginProps) => {
+export const FormForgotPassword = ({ }: FormForgotPasswordProps) => {
     const {
         data,
         onChangeData,
@@ -18,24 +18,17 @@ export const FormLogin = ({ }: FormLoginProps) => {
         loaderSubmit,
         dataError,
         isValidData,
-    } = useFormLogin({});
+    } = useFormForgotPassword({});
     return (
         <>
-            <Form className="form-login">
-                <Title>Entrar</Title>
+            <Form className="form-forgot-password">
+                <Title>Recuperar Contraseña</Title>
                 <InputText
                     label="Correo"
                     placeholder="Correo"
                     defaultValue={data.email}
                     validator={validatorData?.email}
                     onChange={onChangeData('email')}
-                />
-                <InputPassword
-                    label="Contraseña"
-                    placeholder="Contraseña"
-                    defaultValue={data.password}
-                    validator={validatorData?.password}
-                    onChange={onChangeData('password')}
                 />
                 {dataError && <ErrorComponent error={dataError} />}
 
@@ -50,11 +43,10 @@ export const FormLogin = ({ }: FormLoginProps) => {
                     Enviar
                 </Button>
                 <div>
-                    <Link href={URL.auth.register.index}>Registrate</Link>
+                    <Link href={URL.auth.login.index}>Entrar</Link>
                 </div>
                 <div>
-
-                    <Link href={URL.auth['forgot-password'].index}>Olvidates la Contraseña</Link>
+                    <Link href={URL.auth.register.index}>Registrate</Link>
                 </div>
             </Form>
         </>
