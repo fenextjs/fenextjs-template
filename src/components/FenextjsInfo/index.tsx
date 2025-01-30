@@ -24,9 +24,11 @@ export const FenextjsInfo = ({}: FenextjsInfoProps) => {
                     personalizarlo en estilos o agregarle mas funcionalidades
                 </Text>
                 <Text>
-                    Esta plantilla tiene un ejemplo de cómo crear un componente
-                    de login y un sistema simple de traducciones.
+                    Esta plantilla tiene un ejemplo de dashboard, puedes usar el
+                    siguiente usuario para navergarla:
                 </Text>
+                <Text tag="strong">Usuario : user@gmail.com</Text>
+                <Text tag="strong">Contraseña : user1234</Text>
                 <Link href={'https://fenextjs-doc.vercel.app'} target="_blank">
                     <Button>Fenextjs Documentación</Button>
                 </Link>
