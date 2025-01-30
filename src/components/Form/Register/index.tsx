@@ -1,5 +1,5 @@
 import React from 'react';
-import { useFormRegister } from './hook';
+import { useFormRegister, useFormRegisterProps } from './hook';
 import { Form } from '@/ui-fenextjs/Form';
 import { InputPassword, InputText } from '@/ui-fenextjs/Input';
 import { ErrorComponent } from '@/ui-fenextjs/ErrorComponent';
@@ -7,9 +7,9 @@ import { Button } from '@/ui-fenextjs/Button';
 import { Title } from '@/ui-fenextjs/Title';
 import { Link } from '@/ui-fenextjs/Link';
 import { URL } from '@/url';
-export interface FormRegisterProps {}
+export interface FormRegisterProps extends useFormRegisterProps{}
 
-export const FormRegister = ({}: FormRegisterProps) => {
+export const FormRegister = ({...props}: FormRegisterProps) => {
     const {
         data,
         onChangeData,
@@ -18,7 +18,7 @@ export const FormRegister = ({}: FormRegisterProps) => {
         loaderSubmit,
         dataError,
         isValidData,
-    } = useFormRegister({});
+    } = useFormRegister({...props});
     return (
         <>
             <Form className="form-register">

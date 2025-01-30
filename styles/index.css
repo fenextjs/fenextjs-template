@@ -7217,6 +7217,11 @@ body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select
     transform: translateY(-100%);
   }
 } 
+.my-project-form {
+  display: grid;
+  gap: 1rem;
+}
+
 .my-project-user {
   --fenext-size-user: 2rem;
   column-gap: 0.5rem;
@@ -7241,21 +7246,6 @@ body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select
 }
 .fenextjs-info .fenext-picture {
   width: 5rem;
-}
-
-.form-login {
-  display: grid;
-  gap: 1rem;
-}
-
-.form-register {
-  display: grid;
-  gap: 1rem;
-}
-
-.form-forgot-password {
-  display: grid;
-  gap: 1rem;
 }
 
 .change-lang {
