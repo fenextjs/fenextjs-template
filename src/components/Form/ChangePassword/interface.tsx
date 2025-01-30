@@ -1,5 +1,5 @@
 export interface IFormChangePassword {
-    token:string
+    token: string;
     password: string;
-    repeactPassword:string
+    repeactPassword: string;
 }

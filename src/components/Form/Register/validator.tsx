@@ -11,11 +11,12 @@ export const FormRegisterValidator = FenextjsValidator<IFormRegister>()
             .isString('Correo requerido')
             .isEmail('Correo invalido')
             .isRequired('Correo requerido'),
-            password: FenextjsValidator()
-                .isString('Contraseña requerida')
-                .isRequired('Contraseña requerida')
-                .isMinOrEqual(7,"La Contraseña es muy corta")
-                ,
-                repeactPassword: FenextjsValidator()
-                    .isCompareRef("password","La Contraseña no coincide"),
+        password: FenextjsValidator()
+            .isString('Contraseña requerida')
+            .isRequired('Contraseña requerida')
+            .isMinOrEqual(7, 'La Contraseña es muy corta'),
+        repeactPassword: FenextjsValidator().isCompareRef(
+            'password',
+            'La Contraseña no coincide',
+        ),
     });

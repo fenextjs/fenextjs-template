@@ -8,10 +8,8 @@ export interface useFormRegisterProps {
     defaultValue?: IFormRegister;
 }
 
-export const useFormRegister = ({
-    defaultValue
-}: useFormRegisterProps) => {
-    const router = useRouter()
+export const useFormRegister = ({ defaultValue }: useFormRegisterProps) => {
+    const router = useRouter();
     const { pop } = useNotification({});
     const { setAlert, onClearAlert } = useAlert({});
     const HOOK = useData<IFormRegister>((defaultValue ?? {}) as IFormRegister, {
@@ -36,7 +34,7 @@ export const useFormRegister = ({
                 type: 'OK',
             });
             onClearAlert();
-            router.push(URL.auth.login.index)
+            router.push(URL.auth.login.index);
         },
         onAfterSubmitDataError: () => {
             setAlert({

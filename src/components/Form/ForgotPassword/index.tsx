@@ -1,15 +1,15 @@
 import React from 'react';
 import { useFormForgotPassword, useFormForgotPasswordProps } from './hook';
 import { Form } from '@/ui-fenextjs/Form';
-import { InputPassword, InputText } from '@/ui-fenextjs/Input';
+import { InputText } from '@/ui-fenextjs/Input';
 import { ErrorComponent } from '@/ui-fenextjs/ErrorComponent';
 import { Button } from '@/ui-fenextjs/Button';
 import { Title } from '@/ui-fenextjs/Title';
 import { Link } from '@/ui-fenextjs/Link';
 import { URL } from '@/url';
-export interface FormForgotPasswordProps extends useFormForgotPasswordProps{ }
+export interface FormForgotPasswordProps extends useFormForgotPasswordProps {}
 
-export const FormForgotPassword = ({ ...props}: FormForgotPasswordProps) => {
+export const FormForgotPassword = ({ ...props }: FormForgotPasswordProps) => {
     const {
         data,
         onChangeData,
@@ -18,7 +18,7 @@ export const FormForgotPassword = ({ ...props}: FormForgotPasswordProps) => {
         loaderSubmit,
         dataError,
         isValidData,
-    } = useFormForgotPassword({...props});
+    } = useFormForgotPassword({ ...props });
     return (
         <>
             <Form className="form-forgot-password">

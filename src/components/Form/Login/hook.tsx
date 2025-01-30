@@ -7,9 +7,7 @@ export interface useFormLoginProps {
     defaultValue?: IFormLogin;
 }
 
-export const useFormLogin = ({
-    defaultValue ,
-}: useFormLoginProps) => {
+export const useFormLogin = ({ defaultValue }: useFormLoginProps) => {
     const { onLogin } = useUser({});
     const { pop } = useNotification({});
     const { setAlert, onClearAlert } = useAlert({});

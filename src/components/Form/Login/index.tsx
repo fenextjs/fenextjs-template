@@ -7,9 +7,9 @@ import { Button } from '@/ui-fenextjs/Button';
 import { Title } from '@/ui-fenextjs/Title';
 import { Link } from '@/ui-fenextjs/Link';
 import { URL } from '@/url';
-export interface FormLoginProps extends useFormLoginProps{ }
+export interface FormLoginProps extends useFormLoginProps {}
 
-export const FormLogin = ({ ...props}: FormLoginProps) => {
+export const FormLogin = ({ ...props }: FormLoginProps) => {
     const {
         data,
         onChangeData,
@@ -18,7 +18,7 @@ export const FormLogin = ({ ...props}: FormLoginProps) => {
         loaderSubmit,
         dataError,
         isValidData,
-    } = useFormLogin({...props});
+    } = useFormLogin({ ...props });
     return (
         <>
             <Form className="form-login">
@@ -53,8 +53,9 @@ export const FormLogin = ({ ...props}: FormLoginProps) => {
                     <Link href={URL.auth.register.index}>Registrate</Link>
                 </div>
                 <div>
-
-                    <Link href={URL.auth['forgot-password'].index}>Olvidates la Contraseña</Link>
+                    <Link href={URL.auth['forgot-password'].index}>
+                        Olvidates la Contraseña
+                    </Link>
                 </div>
             </Form>
         </>

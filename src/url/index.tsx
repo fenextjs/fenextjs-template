@@ -6,7 +6,7 @@ export const URL = {
         register: {
             index: '/auth/register',
         },
-        "forgot-password": {
+        'forgot-password': {
             index: '/auth/forgot-password',
         },
     },

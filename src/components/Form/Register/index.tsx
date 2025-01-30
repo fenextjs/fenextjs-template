@@ -7,9 +7,9 @@ import { Button } from '@/ui-fenextjs/Button';
 import { Title } from '@/ui-fenextjs/Title';
 import { Link } from '@/ui-fenextjs/Link';
 import { URL } from '@/url';
-export interface FormRegisterProps extends useFormRegisterProps{}
+export interface FormRegisterProps extends useFormRegisterProps {}
 
-export const FormRegister = ({...props}: FormRegisterProps) => {
+export const FormRegister = ({ ...props }: FormRegisterProps) => {
     const {
         data,
         onChangeData,
@@ -18,7 +18,7 @@ export const FormRegister = ({...props}: FormRegisterProps) => {
         loaderSubmit,
         dataError,
         isValidData,
-    } = useFormRegister({...props});
+    } = useFormRegister({ ...props });
     return (
         <>
             <Form className="form-register">
@@ -63,13 +63,14 @@ export const FormRegister = ({...props}: FormRegisterProps) => {
                 >
                     Registrate
                 </Button>
-                                <div>
-                                    <Link href={URL.auth.login.index}>Entrar</Link>
-                                </div>
-                                <div>
-                
-                                    <Link href={URL.auth['forgot-password'].index}>Olvidates la Contraseña</Link>
-                                </div>
+                <div>
+                    <Link href={URL.auth.login.index}>Entrar</Link>
+                </div>
+                <div>
+                    <Link href={URL.auth['forgot-password'].index}>
+                        Olvidates la Contraseña
+                    </Link>
+                </div>
             </Form>
         </>
     );

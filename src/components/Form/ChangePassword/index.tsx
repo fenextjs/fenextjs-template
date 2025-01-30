@@ -6,9 +6,9 @@ import { ErrorComponent } from '@/ui-fenextjs/ErrorComponent';
 import { Button } from '@/ui-fenextjs/Button';
 import { Title } from '@/ui-fenextjs/Title';
 
-export interface FormChangePasswordProps extends useFormChangePasswordProps{}
+export interface FormChangePasswordProps extends useFormChangePasswordProps {}
 
-export const FormChangePassword = ({...props}: FormChangePasswordProps) => {
+export const FormChangePassword = ({ ...props }: FormChangePasswordProps) => {
     const {
         data,
         onChangeData,
@@ -17,7 +17,7 @@ export const FormChangePassword = ({...props}: FormChangePasswordProps) => {
         loaderSubmit,
         dataError,
         isValidData,
-    } = useFormChangePassword({...props});
+    } = useFormChangePassword({ ...props });
     return (
         <>
             <Form className="form-change-password">

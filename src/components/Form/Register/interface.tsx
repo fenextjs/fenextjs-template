@@ -1,6 +1,6 @@
 export interface IFormRegister {
-    name:string
+    name: string;
     email: string;
     password: string;
-    repeactPassword:string
+    repeactPassword: string;
 }
