@@ -12,7 +12,7 @@ export interface useFormLoginProps {
 }
 
 export const useFormLogin = ({ defaultValue }: useFormLoginProps) => {
-    const router = useRouter()
+    const router = useRouter();
     const { mutateAsync: onSubmitData } = useApiLogin({});
     const { onLogin } = useUser({});
     const { pop } = useNotification({});
@@ -41,8 +41,8 @@ export const useFormLogin = ({ defaultValue }: useFormLoginProps) => {
             });
             onClearAlert();
             onLogin(result.data);
-            if(window.location.pathname == URL.auth.login.index){
-                router.push(URL.home.index)
+            if (window.location.pathname == URL.auth.login.index) {
+                router.push(URL.home.index);
             }
         },
         onAfterSubmitDataError: () => {
