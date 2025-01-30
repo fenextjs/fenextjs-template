@@ -1,5 +1,5 @@
 import React from 'react';
-import { useFormLogin } from './hook';
+import { useFormRegister } from './hook';
 import { Form } from '@/ui-fenextjs/Form';
 import { InputPassword, InputText } from '@/ui-fenextjs/Input';
 import { ErrorComponent } from '@/ui-fenextjs/ErrorComponent';
@@ -7,9 +7,9 @@ import { Button } from '@/ui-fenextjs/Button';
 import { Title } from '@/ui-fenextjs/Title';
 import { Link } from '@/ui-fenextjs/Link';
 import { URL } from '@/url';
-export interface FormLoginProps { }
+export interface FormRegisterProps {}
 
-export const FormLogin = ({ }: FormLoginProps) => {
+export const FormRegister = ({}: FormRegisterProps) => {
     const {
         data,
         onChangeData,
@@ -18,11 +18,18 @@ export const FormLogin = ({ }: FormLoginProps) => {
         loaderSubmit,
         dataError,
         isValidData,
-    } = useFormLogin({});
+    } = useFormRegister({});
     return (
         <>
-            <Form className="form-login">
-                <Title>Entrar</Title>
+            <Form className="form-register">
+                <Title>Registrate</Title>
+                <InputText
+                    label="Nombre"
+                    placeholder="Nombre"
+                    defaultValue={data.name}
+                    validator={validatorData?.name}
+                    onChange={onChangeData('name')}
+                />
                 <InputText
                     label="Correo"
                     placeholder="Correo"
@@ -37,6 +44,13 @@ export const FormLogin = ({ }: FormLoginProps) => {
                     validator={validatorData?.password}
                     onChange={onChangeData('password')}
                 />
+                <InputPassword
+                    label="Repite la Contraseña"
+                    placeholder="Contraseña"
+                    defaultValue={data.repeactPassword}
+                    validator={validatorData?.repeactPassword}
+                    onChange={onChangeData('repeactPassword')}
+                />
                 {dataError && <ErrorComponent error={dataError} />}
 
                 <Button
@@ -47,15 +61,15 @@ export const FormLogin = ({ }: FormLoginProps) => {
                     full={true}
                     isBtn={false}
                 >
-                    Enviar
+                    Registrate
                 </Button>
-                <div>
-                    <Link href={URL.auth.register.index}>Registrate</Link>
-                </div>
-                <div>
-
-                    <Link href={URL.auth.register.index}>Olvidates la Contraseña</Link>
-                </div>
+                                <div>
+                                    <Link href={URL.auth.login.index}>Entrar</Link>
+                                </div>
+                                <div>
+                
+                                    <Link href={URL.auth.register.index}>Olvidates la Contraseña</Link>
+                                </div>
             </Form>
         </>
     );

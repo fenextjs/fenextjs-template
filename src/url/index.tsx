@@ -3,6 +3,9 @@ export const URL = {
         login: {
             index: '/auth/login',
         },
+        register: {
+            index: '/auth/register',
+        },
     },
     home: {
         index: '/',
