@@ -37,7 +37,7 @@ export const FormLogin = ({ ...props }: FormLoginProps) => {
                     validator={validatorData?.password}
                     onChange={onChangeData('password')}
                 />
-                {dataError && <ErrorComponent error={dataError} />}
+                {dataError && <ErrorComponent error={dataError?.error} />}
 
                 <Button
                     disabled={isValidData != true}

@@ -1,24 +1,28 @@
-import { env_log, sleep, useAlert, useData, useNotification } from 'fenextjs';
+import { useAlert, useData, useNotification } from 'fenextjs';
 import { IFormLogin } from './interface';
 import { FormLoginValidator } from './validator';
-import { useUser } from '@/hook/useUser';
+import { useUser, useUserDataProps } from '@/hook/useUser';
+import { useApiLogin } from '@/api/auth/login';
+import { IApiError, IApiResult } from '@/interface/api';
 
 export interface useFormLoginProps {
     defaultValue?: IFormLogin;
 }
 
 export const useFormLogin = ({ defaultValue }: useFormLoginProps) => {
+    const { mutateAsync: onSubmitData } = useApiLogin({});
     const { onLogin } = useUser({});
     const { pop } = useNotification({});
     const { setAlert, onClearAlert } = useAlert({});
-    const HOOK = useData<IFormLogin>((defaultValue ?? {}) as IFormLogin, {
+    const HOOK = useData<
+        IFormLogin,
+        any,
+        IApiResult<useUserDataProps>,
+        any,
+        IApiError
+    >((defaultValue ?? {}) as IFormLogin, {
         validator: FormLoginValidator,
-        onSubmitData: async (data) => {
-            env_log(data, {
-                name: 'DATA',
-            });
-            await sleep(2000);
-        },
+        onSubmitData,
         onBeforeSubmitData: ({ isValid }) => {
             if (isValid != true) {
                 setAlert({
@@ -27,18 +31,13 @@ export const useFormLogin = ({ defaultValue }: useFormLoginProps) => {
                 });
             }
         },
-        onAfterSubmitDataOk: () => {
+        onAfterSubmitDataOk: ({ result }) => {
             pop({
                 message: 'Login exitoso',
                 type: 'OK',
             });
             onClearAlert();
-            onLogin({
-                id: '1',
-                name: 'Name User',
-                email: 'Email@user.com',
-                token: 'token user',
-            });
+            onLogin(result.data);
         },
         onAfterSubmitDataError: () => {
             setAlert({
