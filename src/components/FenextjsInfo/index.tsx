@@ -27,8 +27,8 @@ export const FenextjsInfo = ({}: FenextjsInfoProps) => {
                     Esta plantilla tiene un ejemplo de dashboard, puedes usar el
                     siguiente usuario para navergarla:
                 </Text>
-                <Text tag="strong">Usuario : user@gmail.com</Text>
-                <Text tag="strong">Contraseña : user1234</Text>
+                <Text tag="strong" useT={false}><Text tag='strong'>Usuario</Text> : user@gmail.com</Text>
+                <Text tag="strong" useT={false}><Text tag='strong' >Contraseña</Text> : user1234</Text>
                 <Link href={'https://fenextjs-doc.vercel.app'} target="_blank">
                     <Button>Fenextjs Documentación</Button>
                 </Link>

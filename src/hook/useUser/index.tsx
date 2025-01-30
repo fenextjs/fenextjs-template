@@ -1,4 +1,4 @@
-import { URL } from '@/url';
+// import { URL } from '@/url';
 import { ImgProps, useUser as useUserFenextjs } from 'fenextjs';
 
 export interface useUserDataProps {
@@ -13,7 +13,7 @@ export interface useUserProps {}
 
 export const useUser = ({}: useUserProps) => {
     return useUserFenextjs<useUserDataProps>({
-        urlRedirectInLogin: URL.home.index,
+        // urlRedirectInLogin: URL.home.index,
         // urlRedirectInLogout:URL.auth.login.index,
         onValidateUser: (user) => {
             return user != undefined && user?.token != undefined;

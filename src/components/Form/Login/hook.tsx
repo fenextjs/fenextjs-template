@@ -4,12 +4,15 @@ import { FormLoginValidator } from './validator';
 import { useUser, useUserDataProps } from '@/hook/useUser';
 import { useApiLogin } from '@/api/auth/login';
 import { IApiError, IApiResult } from '@/interface/api';
+import { URL } from '@/url';
+import { useRouter } from 'next/router';
 
 export interface useFormLoginProps {
     defaultValue?: IFormLogin;
 }
 
 export const useFormLogin = ({ defaultValue }: useFormLoginProps) => {
+    const router = useRouter()
     const { mutateAsync: onSubmitData } = useApiLogin({});
     const { onLogin } = useUser({});
     const { pop } = useNotification({});
@@ -38,6 +41,9 @@ export const useFormLogin = ({ defaultValue }: useFormLoginProps) => {
             });
             onClearAlert();
             onLogin(result.data);
+            if(window.location.pathname == URL.auth.login.index){
+                router.push(URL.home.index)
+            }
         },
         onAfterSubmitDataError: () => {
             setAlert({
