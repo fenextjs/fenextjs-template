@@ -11,3 +11,8 @@ export interface IApiError {
 }
 
 export type IApiRespond<T> = IApiResult<T> | IApiError;
+
+export interface IApiResultTable<T> {
+    count: number;
+    items: T[];
+}

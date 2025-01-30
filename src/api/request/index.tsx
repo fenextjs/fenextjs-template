@@ -1,6 +1,7 @@
 import { useUser } from '@/hook/useUser';
 import { IApiError, IApiResult } from '@/interface/api';
 import { useMutation } from '@tanstack/react-query';
+import { useApiError } from 'fenextjs';
 
 export interface useRequestCallbackProps<R> {
     onSuccess?: (data: IApiResult<R>) => void;
@@ -18,6 +19,7 @@ export const useRequest = <I, R>({
     options,
 }: useRequestProps<R>) => {
     const { user } = useUser({});
+    const { onApiError } = useApiError({});
 
     const onRequest = async (input: I): Promise<IApiResult<R>> => {
         const response = await fetch(url, {
@@ -32,6 +34,7 @@ export const useRequest = <I, R>({
         });
         const data = await response.json();
         if (data?.error) {
+            onApiError(data);
             throw data;
         }
         return data;
