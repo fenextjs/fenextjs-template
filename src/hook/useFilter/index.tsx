@@ -1,18 +1,15 @@
 
-import {  useFilter as useFilterFenextjs,useFilterProps as useFilterFenextjsProps, SearchDataProps,DateDataProps } from 'fenextjs';
+import {  useFilter as useFilterFenextjs,useFilterProps as useFilterFenextjsProps, } from 'fenextjs';
 
-export interface useFilterDataProps extends SearchDataProps ,DateDataProps {
-    
+export interface useFilterCustomDataProps  {
+    test?:string
 }
 
-export interface useFilterProps extends useFilterFenextjsProps<useFilterDataProps>{}
+export interface useFilterProps extends useFilterFenextjsProps<useFilterCustomDataProps>{}
 
 export const useFilter = ({...props}: useFilterProps) => {
-    const HOOK= useFilterFenextjs<useFilterDataProps>({
+    return useFilterFenextjs<useFilterCustomDataProps>({
         ...props
     });
-    return {
-        ...HOOK,
-        data:HOOK?.data as useFilterDataProps
-    }
+
 };

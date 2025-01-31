@@ -1,4 +1,4 @@
-import { FilterDateDataProps } from 'fenextjs';
+import { DateDataProps } from 'fenextjs';
 
 export interface parseInputToQueryProps {
     input?: object;
@@ -10,7 +10,7 @@ export const parseInputToQuery = ({ input }: parseInputToQueryProps) => {
         const v = (input as any)?.[key];
         if (v != undefined && v != null) {
             if (key == 'date') {
-                const dateValue = v as FilterDateDataProps;
+                const dateValue = v as DateDataProps;
                 if (dateValue?.type == 'normal' && dateValue?.date) {
                     objInput['date'] = dateValue?.date?.toISOString();
                 }
@@ -26,6 +26,7 @@ export const parseInputToQuery = ({ input }: parseInputToQueryProps) => {
                         dateValue?.dateRange?.[1]?.toISOString();
                 }
             } else if (key == 'search' && v == '') {
+                return;
             } else {
                 objInput[key] = v;
             }
