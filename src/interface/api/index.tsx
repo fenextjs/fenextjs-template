@@ -1,5 +1,9 @@
 import { useFilterCustomDataProps } from '@/hook/useFilter';
-import { ErrorFenextjs, PaginationDataProps, useFilterDataProps } from 'fenextjs';
+import {
+    ErrorFenextjs,
+    PaginationDataProps,
+    useFilterDataProps,
+} from 'fenextjs';
 
 export interface IApiResult<T> {
     message: string;
@@ -18,6 +22,6 @@ export interface IApiResultTable<T> {
     items: T[];
 }
 
-export interface IApiQuery extends PaginationDataProps ,useFilterDataProps<useFilterCustomDataProps>{
-    
-}
+export interface IApiQuery
+    extends PaginationDataProps,
+        useFilterDataProps<useFilterCustomDataProps> {}

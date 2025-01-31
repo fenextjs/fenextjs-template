@@ -1,15 +1,17 @@
+import {
+    useFilter as useFilterFenextjs,
+    useFilterProps as useFilterFenextjsProps,
+} from 'fenextjs';
 
-import {  useFilter as useFilterFenextjs,useFilterProps as useFilterFenextjsProps, } from 'fenextjs';
-
-export interface useFilterCustomDataProps  {
-    test?:string
+export interface useFilterCustomDataProps {
+    test?: string;
 }
 
-export interface useFilterProps extends useFilterFenextjsProps<useFilterCustomDataProps>{}
+export interface useFilterProps
+    extends useFilterFenextjsProps<useFilterCustomDataProps> {}
 
-export const useFilter = ({...props}: useFilterProps) => {
+export const useFilter = ({ ...props }: useFilterProps) => {
     return useFilterFenextjs<useFilterCustomDataProps>({
-        ...props
+        ...props,
     });
-
 };

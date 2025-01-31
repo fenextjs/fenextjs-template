@@ -14,12 +14,12 @@ export const URL = {
         index: '/',
     },
     user: {
-        index: '/user',
+        index: '/user/',
     },
     client: {
-        index: '/client',
+        index: '/client/',
     },
     product: {
-        index: '/product',
+        index: '/product/',
     },
 };

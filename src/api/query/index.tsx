@@ -22,11 +22,13 @@ export const useApiQuery = <I, R>({
 }: useApiQueryProps<I>) => {
     const { user, load } = useUser({});
     const { data: dataFilter } = useFilter({});
-    const { data:pagination } = usePagination({});
+    const { data: pagination } = usePagination({});
     const { onApiError } = useApiError({});
 
     const onQuery = async (): Promise<IApiResult<R>> => {
-        const query = parseInputToQuery({ input: { ...dataFilter, ...input,...pagination } });
+        const query = parseInputToQuery({
+            input: { ...dataFilter, ...input, ...pagination },
+        });
         const response = await fetch(`${url}?${query}`, {
             method: 'GET',
             ...options,
@@ -55,6 +57,9 @@ export const useApiQuery = <I, R>({
     return useQuery<IApiResult<R>, IApiError>({
         queryKey: [key],
         queryFn: load ? onQuery : onQueryNotLoadUser,
-        queryHash: key + '-' + JSON.stringify({ input, dataFilter, user, load }),
+        queryHash:
+            key +
+            '-' +
+            JSON.stringify({ input, dataFilter, user, load, pagination }),
     });
 };
