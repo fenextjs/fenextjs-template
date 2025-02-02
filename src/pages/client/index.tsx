@@ -11,12 +11,12 @@ export const PageClient = () => {
         <>
             <LayoutDashboard>
                 <LayoutTable
-                    top={<>
-                        <Title>Clientes</Title>
-                        <Text>
-                            Aqui puedes mirar tus clientes.
-                        </Text>
-                    </>}
+                    top={
+                        <>
+                            <Title>Clientes</Title>
+                            <Text>Aqui puedes mirar tus clientes.</Text>
+                        </>
+                    }
                 >
                     <TableClient
                         items={data?.data.items}

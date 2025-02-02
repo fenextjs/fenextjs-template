@@ -1,13 +1,13 @@
 .layout-table {
     display: grid;
     gap: 1rem;
-    &-top{
+    &-top {
         display: grid;
         gap: 1rem;
     }
-    &-filter{
+    &-filter {
         display: flex;
         flex-wrap: wrap;
         gap: 1rem;
     }
-}   
+}
