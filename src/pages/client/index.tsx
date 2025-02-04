@@ -19,8 +19,8 @@ export const PageClient = () => {
                     }
                 >
                     <TableClient
-                        items={data?.data.items}
-                        nItems={data?.data.count}
+                        items={data?.data?.items}
+                        nItems={data?.data?.count}
                         loader={isLoading}
                         error={error?.error}
                     />
