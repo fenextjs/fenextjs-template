@@ -8,6 +8,9 @@ const queryClient = new QueryClient();
 
 export default function App({ Component, pageProps }: AppProps) {
     useHistory({});
+    if (typeof window == 'undefined') {
+        return <></>;
+    }
     return (
         <>
             <QueryClientProvider client={queryClient}>

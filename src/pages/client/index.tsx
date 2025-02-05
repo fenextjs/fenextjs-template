@@ -1,3 +1,4 @@
+'use client';
 import { useQueryClient } from '@/api/client/query';
 import { LayoutDashboard } from '@/layout/Dashboard';
 import { LayoutTable } from '@/layout/Table';

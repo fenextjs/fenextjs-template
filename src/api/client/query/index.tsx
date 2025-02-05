@@ -1,4 +1,4 @@
-import { useApiQuery } from '@/api/query';
+import { useApiQuery } from 'fenextjs';
 import { IApiResultTable } from '@/interface/api';
 import { IClient } from '@/interface/client';
 
