@@ -21,6 +21,7 @@ export default ApiEndPoint<IApiResultTable<IClient>>(async (req, res) => {
                 name: 'Cliente ' + i,
                 email: `client${i}@gmail.com`,
                 createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString(),
             };
         })
         .filter((e) => {
