@@ -1,19 +1,13 @@
 import '../../styles/index.css';
 import type { AppProps } from 'next/app';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { NotificationPop, useHistory } from 'fenextjs';
+import { NotificationPop, useHistory, QueryClientProvider } from 'fenextjs';
 import Head from 'next/head';
-
-const queryClient = new QueryClient();
 
 export default function App({ Component, pageProps }: AppProps) {
     useHistory({});
-    if (typeof window == 'undefined') {
-        return <></>;
-    }
     return (
         <>
-            <QueryClientProvider client={queryClient}>
+            <QueryClientProvider>
                 <Head>
                     <title>¡Bienvenido a Fenextjs!</title>
                     <link rel="icon" href="/favicon.png" sizes="32x32"></link>
