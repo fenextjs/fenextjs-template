@@ -10,4 +10,9 @@
         flex-wrap: wrap;
         gap: 1rem;
     }
+    &-content {
+        .fenext-table {
+            max-height: calc(100dvh - 11.5rem - var(--fenext-size-menu-top));
+        }
+    }
 }

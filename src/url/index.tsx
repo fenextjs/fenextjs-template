@@ -18,6 +18,9 @@ export const URL = {
     },
     client: {
         index: '/client/',
+        create: {
+            index: '/client/create',
+        },
     },
     product: {
         index: '/product/',

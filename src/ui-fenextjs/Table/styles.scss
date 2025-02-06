@@ -1,2 +1,52 @@
 .my-project-table {
 }
+.fenext-table {
+    // overflow: auto;
+}
+.fenext-table-content {
+    border-radius: 1rem;
+    box-shadow: inset 0 0 0 2px var(--fenext-color-light);
+    padding: 0;
+    // clip-path: inset(0 0 0 0 round 1rem 0 0 0);
+}
+
+.fenext-table-content-table {
+    overflow: visible;
+    // clip-path: inset(0 0 0 0 round 1rem);
+}
+.fenext-table-content-table-tr:last-of-type {
+    .fenext-table-content-table-td {
+        border: 0;
+    }
+}
+.fenext-table-content-table {
+    // box-shadow: none;
+    // overflow: auto;
+    // max-height: calc(100dvh - 11.5rem - var(--fenext-size-menu-top));
+}
+.fenext-table-content-table-thead {
+    // background: transparent;
+    // box-shadow: inset 0 0 0 10rem  var(--fenext-color-light);
+    // border-top-left-radius: 1rem;
+    // border-top-right-radius: 1rem;
+    z-index: 1;
+    // clip-path: inset(0 0 0 0 round 1rem 1rem 0 0);
+}
+.fenext-table-content-table-thr {
+    // background: var(--fenext-color-light);
+    // border-radius: 1rem;
+    // overflow: hidden;
+}
+.fenext-table-content-table-td {
+}
+.fenext-table-content-table-tbody {
+    // box-shadow: inset 0 0 0 2px var(--fenext-color-light);
+    // position: sticky;
+    // top: 2rem;
+    // border: 2px solid;
+    border-radius: 0;
+}
+.fenext-table-content {
+    // overflow: hidden;
+    // border-radius: 1rem;
+}
