@@ -1,23 +1,23 @@
 import { IStatus } from '@/interface/status';
 import { IApiRespond, useApiMutation, useNotification } from 'fenextjs';
 
-export interface useUpdateUserInputProps {
+export interface useUpdateProductInputProps {
     ids: string[];
     status: IStatus;
 }
 
-export interface useUpdateUserProps {}
-export const useUpdateUser = ({}: useUpdateUserProps) => {
+export interface useUpdateProductProps {}
+export const useUpdateProduct = ({}: useUpdateProductProps) => {
     const { pop } = useNotification({});
-    return useApiMutation<useUpdateUserInputProps, IApiRespond<unknown>>({
-        url: '/api/user/update',
-        key: 'user',
+    return useApiMutation<useUpdateProductInputProps, IApiRespond<unknown>>({
+        url: '/api/product/update',
+        key: 'product',
         options: {
             method: 'PATCH',
         },
         onSuccess: () => {
             pop({
-                message: 'Usuarios Actualizados',
+                message: 'Productos Actualizados',
                 type: 'OK',
             });
         },

@@ -15,6 +15,9 @@ export const URL = {
     },
     user: {
         index: '/user/',
+        create: {
+            index: '/user/create',
+        },
     },
     client: {
         index: '/client/',
@@ -24,5 +27,8 @@ export const URL = {
     },
     product: {
         index: '/product/',
+        create: {
+            index: '/product/create',
+        },
     },
 };

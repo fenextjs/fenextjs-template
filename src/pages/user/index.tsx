@@ -24,7 +24,7 @@ export const PageUser = () => {
                                     <Title>Usuarios</Title>
                                     <Text>Aqui puedes mirar tus usuarios.</Text>
                                 </div>
-                                <Link href={URL.client.create.index}>
+                                <Link href={URL.user.create.index}>
                                     <Button>Crear Usuario</Button>
                                 </Link>
                             </Col1frAuto>
