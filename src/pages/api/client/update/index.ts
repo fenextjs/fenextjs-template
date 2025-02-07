@@ -1,10 +1,10 @@
 import { ApiEndPoint } from '@/api/endpoint';
-import { IApiResult, sleep } from 'fenextjs';
+import { IApiRespond, sleep } from 'fenextjs';
 
-export default ApiEndPoint<IApiResult<{}>>(async (req, res) => {
+export default ApiEndPoint<unknown>(async (req, res) => {
     await sleep(2000);
 
-    const respond: IApiResult<{}> = {
+    const respond: IApiRespond<unknown> = {
         data: {},
         message: 'Clientes Actualizados',
     };

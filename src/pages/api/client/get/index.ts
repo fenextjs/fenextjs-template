@@ -5,7 +5,7 @@ import { IStatus } from '@/interface/status';
 import { IApiResult, parseNumber, sleep } from 'fenextjs';
 
 export default ApiEndPoint<IApiResultTable<IClient>>(async (req, res) => {
-    const { search, ...query } = (req?.query ?? {}) as IApiQuery;
+    const { search, status, ...query } = (req?.query ?? {}) as IApiQuery;
 
     const npage = parseNumber(query?.npage ?? 10);
     const page = parseNumber(query?.page ?? 0);
@@ -17,7 +17,7 @@ export default ApiEndPoint<IApiResultTable<IClient>>(async (req, res) => {
     const items: IClient[] = new Array(count)
         .fill(1)
         .map((_, i) => {
-            const r :IClient =  {
+            const r: IClient = {
                 id: `${i}`,
                 name: 'Cliente ' + i,
                 email: `client${i}@gmail.com`,
@@ -25,7 +25,7 @@ export default ApiEndPoint<IApiResultTable<IClient>>(async (req, res) => {
                 createdAt: new Date().toISOString(),
                 updatedAt: new Date().toISOString(),
             };
-            return r
+            return r;
         })
         .filter((e) => {
             if (search) {
@@ -33,6 +33,9 @@ export default ApiEndPoint<IApiResultTable<IClient>>(async (req, res) => {
                     e?.name?.toLowerCase().includes(search.toLowerCase()) ||
                     search?.toLowerCase().includes(e?.name.toLowerCase())
                 );
+            }
+            if (status) {
+                return e?.status == status;
             }
             return true;
         })

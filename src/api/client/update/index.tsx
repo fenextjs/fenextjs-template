@@ -9,7 +9,7 @@ export interface useUpdateClientInputProps {
 export interface useUpdateClientProps {}
 export const useUpdateClient = ({}: useUpdateClientProps) => {
     const { pop } = useNotification({});
-    return useApiMutation<useUpdateClientInputProps, IApiRespond<{}>>({
+    return useApiMutation<useUpdateClientInputProps, IApiRespond<unknown>>({
         url: '/api/client/update',
         key: 'client',
         options: {

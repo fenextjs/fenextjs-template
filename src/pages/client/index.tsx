@@ -30,9 +30,11 @@ export const PageClient = () => {
                             </Col1frAuto>
                         </>
                     }
-                    extraFilter={<>
-                        <FilterStatus/>
-                    </>}
+                    extraFilter={
+                        <>
+                            <FilterStatus />
+                        </>
+                    }
                 >
                     <TableClient
                         items={data?.data?.items}

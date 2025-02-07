@@ -1,5 +1,4 @@
-import { IApiRespond } from '@/interface/api';
-import { ErrorFenextjs } from 'fenextjs';
+import { ErrorFenextjs, IApiRespond } from 'fenextjs';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 export const ApiEndPoint =

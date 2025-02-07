@@ -1,9 +1,14 @@
-import { useAlert, useData, useNotification } from 'fenextjs';
+import {
+    IApiError,
+    IApiResult,
+    useAlert,
+    useData,
+    useNotification,
+} from 'fenextjs';
 import { IFormLogin } from './interface';
 import { FormLoginValidator } from './validator';
 import { useUser, useUserDataProps } from '@/hook/useUser';
 import { useApiLogin } from '@/api/auth/login';
-import { IApiError, IApiResult } from '@/interface/api';
 import { URL } from '@/url';
 import { useRouter } from 'next/router';
 

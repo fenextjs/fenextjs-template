@@ -5,10 +5,14 @@ export interface LayoutTableProps {
     top?: ReactNode;
     children?: ReactNode;
 
-    extraFilter?:ReactNode
+    extraFilter?: ReactNode;
 }
 
-export const LayoutTable = ({ children, top,extraFilter }: LayoutTableProps) => {
+export const LayoutTable = ({
+    children,
+    top,
+    extraFilter,
+}: LayoutTableProps) => {
     return (
         <>
             <div className="layout-table">
