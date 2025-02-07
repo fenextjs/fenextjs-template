@@ -108,7 +108,7 @@ export const TableProduct = ({ ...props }: TableProductProps) => {
                             >
                                 <Img
                                     src={product?.image ?? ''}
-
+                                    className='img-table'
                                 />
                             </Link>
                         );

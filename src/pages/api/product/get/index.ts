@@ -20,7 +20,7 @@ export default ApiEndPoint<IApiResultTable<IProduct>>(async (req, res) => {
             const r: IProduct = {
                 id: `${i}`,
                 name: 'Producto ' + i,
-                description:"Descripcion "+1,
+                description:"Descripcion "+i,
                 price: 100 * (i +1),
                 image:"",
                 status: Object.values(IStatus)[i % 3],
