@@ -9,7 +9,7 @@ import { Img } from '@/ui-fenextjs/Img';
 import { Link } from '@/ui-fenextjs/Link';
 import { Table } from '@/ui-fenextjs/Table';
 import { URL } from '@/url';
-import { parseNumber, parseNumberCount, SvgCheck, SvgClose, SvgTrash } from 'fenextjs';
+import { parseNumberCount, SvgCheck, SvgClose, SvgTrash } from 'fenextjs';
 
 export interface TableProductProps extends ITable<IProduct> {}
 
@@ -108,7 +108,7 @@ export const TableProduct = ({ ...props }: TableProductProps) => {
                             >
                                 <Img
                                     src={product?.image ?? ''}
-                                    className='img-table'
+                                    className="img-table"
                                 />
                             </Link>
                         );
@@ -132,7 +132,7 @@ export const TableProduct = ({ ...props }: TableProductProps) => {
                     id: 'price',
                     th: 'Precio',
                     parse: (product) => {
-                        return "$" + parseNumberCount(product?.price);
+                        return '$' + parseNumberCount(product?.price);
                     },
                 },
                 {

@@ -22,7 +22,9 @@ export const PageProduct = () => {
                             <Col1frAuto>
                                 <div>
                                     <Title>Productos</Title>
-                                    <Text>Aqui puedes mirar tus productos.</Text>
+                                    <Text>
+                                        Aqui puedes mirar tus productos.
+                                    </Text>
                                 </div>
                                 <Link href={URL.product.create.index}>
                                     <Button>Crear Producto</Button>
