@@ -1,6 +1,7 @@
 'use client';
 import { useQueryClient } from '@/api/client/query';
 import { Col1frAuto } from '@/components/TableTop';
+import { FilterStatus } from '@/filter/Status';
 import { LayoutDashboard } from '@/layout/Dashboard';
 import { LayoutTable } from '@/layout/Table';
 import { TableClient } from '@/table/client';
@@ -29,6 +30,9 @@ export const PageClient = () => {
                             </Col1frAuto>
                         </>
                     }
+                    extraFilter={<>
+                        <FilterStatus/>
+                    </>}
                 >
                     <TableClient
                         items={data?.data?.items}

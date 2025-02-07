@@ -1,7 +1,8 @@
 import { ApiEndPoint } from '@/api/endpoint';
-import { IApiQuery, IApiResult, IApiResultTable } from '@/interface/api';
+import { IApiQuery, IApiResultTable } from '@/interface/api';
 import { IClient } from '@/interface/client';
-import { parseNumber, sleep } from 'fenextjs';
+import { IStatus } from '@/interface/status';
+import { IApiResult, parseNumber, sleep } from 'fenextjs';
 
 export default ApiEndPoint<IApiResultTable<IClient>>(async (req, res) => {
     const { search, ...query } = (req?.query ?? {}) as IApiQuery;
@@ -16,13 +17,15 @@ export default ApiEndPoint<IApiResultTable<IClient>>(async (req, res) => {
     const items: IClient[] = new Array(count)
         .fill(1)
         .map((_, i) => {
-            return {
+            const r :IClient =  {
                 id: `${i}`,
                 name: 'Cliente ' + i,
                 email: `client${i}@gmail.com`,
+                status: Object.values(IStatus)[i % 3],
                 createdAt: new Date().toISOString(),
                 updatedAt: new Date().toISOString(),
             };
+            return r
         })
         .filter((e) => {
             if (search) {

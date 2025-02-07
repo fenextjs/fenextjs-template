@@ -1,10 +1,11 @@
+import { IStatus } from '@/interface/status';
 import {
     useFilter as useFilterFenextjs,
     useFilterProps as useFilterFenextjsProps,
 } from 'fenextjs';
 
 export interface useFilterCustomDataProps {
-    test?: string;
+    status?: IStatus;
 }
 
 export interface useFilterProps

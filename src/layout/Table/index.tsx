@@ -4,9 +4,11 @@ import { ReactNode } from 'react';
 export interface LayoutTableProps {
     top?: ReactNode;
     children?: ReactNode;
+
+    extraFilter?:ReactNode
 }
 
-export const LayoutTable = ({ children, top }: LayoutTableProps) => {
+export const LayoutTable = ({ children, top,extraFilter }: LayoutTableProps) => {
     return (
         <>
             <div className="layout-table">
@@ -14,6 +16,7 @@ export const LayoutTable = ({ children, top }: LayoutTableProps) => {
                 <div className="layout-table-filter">
                     <FilterSearch />
                     <FilterDate />
+                    {extraFilter}
                 </div>
                 <div className="layout-table-content">{children}</div>
             </div>

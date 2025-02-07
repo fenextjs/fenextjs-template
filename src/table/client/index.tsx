@@ -1,25 +1,79 @@
+import { useUpdateClient } from '@/api/client/update';
 import { IClient } from '@/interface/client';
+import { IStatus } from '@/interface/status';
 import { ITable } from '@/interface/table';
 import { parseDateTimeFormat_DD_MM_YY } from '@/parse/Dates';
+import { parseStatus } from '@/parse/Status';
 import { Button } from '@/ui-fenextjs/Button';
 import { Link } from '@/ui-fenextjs/Link';
 import { Table } from '@/ui-fenextjs/Table';
 import { URL } from '@/url';
-import { SvgTrash } from 'fenextjs';
+import { SvgCheck, SvgClose, SvgTrash } from 'fenextjs';
 
 export interface TableClientProps extends ITable<IClient> {}
 
 export const TableClient = ({ ...props }: TableClientProps) => {
+    const { mutate, isPending } = useUpdateClient({});
     return (
         <Table<IClient>
             name="Clientes"
             {...props}
             actionsCheckbox={{
                 actions: [
-                    () => {
+                    (clients) => {
                         return (
                             <>
-                                <Button size="extra-small" icon={<SvgTrash />}>
+                                <Button
+                                    size="extra-small"
+                                    icon={<SvgCheck />}
+                                    onClick={() => {
+                                        mutate({
+                                            ids: clients?.map((e) => e.id),
+                                            status: IStatus.ACTIVE,
+                                        });
+                                    }}
+                                    loader={isPending}
+                                >
+                                    Activar
+                                </Button>
+                            </>
+                        );
+                    },
+
+                    (clients) => {
+                        return (
+                            <>
+                                <Button
+                                    size="extra-small"
+                                    icon={<SvgClose />}
+                                    onClick={() => {
+                                        mutate({
+                                            ids: clients?.map((e) => e.id),
+                                            status: IStatus.INACTIVE,
+                                        });
+                                    }}
+                                    loader={isPending}
+                                >
+                                    Desactivar
+                                </Button>
+                            </>
+                        );
+                    },
+
+                    (clients) => {
+                        return (
+                            <>
+                                <Button
+                                    size="extra-small"
+                                    icon={<SvgTrash />}
+                                    onClick={() => {
+                                        mutate({
+                                            ids: clients?.map((e) => e.id),
+                                            status: IStatus.DELETE,
+                                        });
+                                    }}
+                                    loader={isPending}
+                                >
                                     Eliminar
                                 </Button>
                             </>
@@ -69,6 +123,13 @@ export const TableClient = ({ ...props }: TableClientProps) => {
                                 {client?.email}
                             </Link>
                         );
+                    },
+                },
+                {
+                    id: 'status',
+                    th: 'Estatus',
+                    parse: (client) => {
+                        return parseStatus(client?.status);
                     },
                 },
                 {

@@ -359,7 +359,7 @@ body.sb-show-main.sb-main-padded:has(.fenext-layout-grid) {
   --fenext-btn-loader-height: 1.5rem;
   --fenext-btn-loader-width: auto;
   --fenext-btn-loader-color: var(--fenext-color-light);
-  --fenext-btn-fenext-svg: 1em;
+  --fenext-btn-fenext-svg-size: 1em;
 }
 
 .fenext-btn {
@@ -396,7 +396,8 @@ body.sb-show-main.sb-main-padded:has(.fenext-layout-grid) {
 }
 
 .fenext-btn :where(.fenext-btn-icon .fenext_svg) {
-  width: var(--fenext-btn-fenext-svg);
+  width: var(--fenext-btn-fenext-svg-size);
+  height: var(--fenext-btn-fenext-svg-size);
 }
 
 .fenext-btn-disabled {
