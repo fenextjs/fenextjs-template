@@ -88,10 +88,7 @@ export const TableUser = ({ ...props }: TableUserProps) => {
                     th: 'ID',
                     parse: (user) => {
                         return (
-                            <Link
-                                useT={false}
-                                href={URL.user.index + user.id}
-                            >
+                            <Link useT={false} href={URL.user.index + user.id}>
                                 {user?.id}
                             </Link>
                         );
@@ -102,10 +99,7 @@ export const TableUser = ({ ...props }: TableUserProps) => {
                     th: 'Nombre',
                     parse: (user) => {
                         return (
-                            <Link
-                                useT={false}
-                                href={URL.user.index + user.id}
-                            >
+                            <Link useT={false} href={URL.user.index + user.id}>
                                 {user?.name}
                             </Link>
                         );

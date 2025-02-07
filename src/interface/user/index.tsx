@@ -6,7 +6,7 @@ export interface IUser {
     name: string;
     email: string;
     status: IStatus;
-    role:IRole
+    role: IRole;
     createdAt: string;
     updatedAt: string;
 }

@@ -11,10 +11,10 @@ export const FilterStatus = ({ nameFilter }: FilterStatusProps) => {
     const { onChangeData: onChangeDataPagination } = usePagination({
         name: nameFilter,
     });
-    const { onChangeData, data,onDeleteData } = useFilter({});
+    const { onChangeData, data, onDeleteData } = useFilter({});
 
     useEffect(() => {
-        onDeleteData("status")
+        onDeleteData('status');
     }, []);
 
     return (
