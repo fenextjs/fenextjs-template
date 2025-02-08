@@ -2,7 +2,9 @@ import { useApiQuery } from 'fenextjs';
 import { IApiResultTable } from '@/interface/api';
 import { IUser } from '@/interface/user';
 
-export interface useQueryUserInputProps {}
+export interface useQueryUserInputProps {
+    id?:string
+}
 
 export interface useQueryUserProps {
     input?: useQueryUserInputProps;

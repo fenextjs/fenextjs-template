@@ -1,6 +1,6 @@
 'use client';
 import { useQueryProduct } from '@/api/product/query';
-import { Col1frAuto } from '@/components/TableTop';
+import { Col1frAuto } from '@/components/Col1frAuto';
 import { FilterStatus } from '@/filter/Status';
 import { LayoutDashboard } from '@/layout/Dashboard';
 import { LayoutTable } from '@/layout/Table';
