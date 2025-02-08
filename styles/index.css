@@ -7270,8 +7270,18 @@ body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select
     transform: translateY(-100%);
   }
 } 
+.text-description {
+  width: 100%;
+  max-width: 30rem;
+}
+
 .img-table {
   width: 3rem;
+  aspect-ratio: 1/1;
+}
+
+.img-single {
+  width: 10rem;
   aspect-ratio: 1/1;
 }
 
@@ -7341,7 +7351,7 @@ body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select
 .col-2-auto {
   display: grid;
   grid-template-columns: auto auto;
-  align-items: center;
+  align-items: start;
   width: fit-content;
   gap: 1rem;
 }

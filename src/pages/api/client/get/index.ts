@@ -6,6 +6,7 @@ import { IApiResult, parseNumber, sleep } from 'fenextjs';
 
 export default ApiEndPoint<IApiResultTable<IClient>>(async (req, res) => {
     const { search, status, ...query } = (req?.query ?? {}) as IApiQuery;
+    const { id } = query as any;
 
     const npage = parseNumber(query?.npage ?? 10);
     const page = parseNumber(query?.page ?? 0);
@@ -36,6 +37,9 @@ export default ApiEndPoint<IApiResultTable<IClient>>(async (req, res) => {
             }
             if (status) {
                 return e?.status == status;
+            }
+            if (id) {
+                return `${e?.id}` == `${id}`;
             }
             return true;
         })

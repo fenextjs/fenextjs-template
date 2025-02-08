@@ -25,7 +25,7 @@ export const PageUserSingle = () => {
                             <Text>ID</Text>
                             <Text useT={false}>#{data?.id}</Text>
                             <Text>Email</Text>
-                            <Link href={`maito:${data?.email}`} useT={false}>{data?.email}</Link>
+                            <Link href={`mailto:${data?.email}`} target='_blank' useT={false}>{data?.email}</Link>
                             <Text>Rol</Text>
                             <Text useT={false}>{parseRole(data?.role)}</Text>
                             <Text>Estatus</Text>
