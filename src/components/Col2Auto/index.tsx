@@ -1,4 +1,6 @@
 import React, { ReactNode } from 'react';
+import { GridCols } from 'fenextjs';
+
 export interface Col2AutoProps {
     children?: ReactNode;
 }
@@ -6,7 +8,9 @@ export interface Col2AutoProps {
 export const Col2Auto = ({ children }: Col2AutoProps) => {
     return (
         <>
-            <div className="col-2-auto">{children}</div>
+            <GridCols className="col-2-auto" colsMin992="auto auto">
+                {children}
+            </GridCols>
         </>
     );
 };

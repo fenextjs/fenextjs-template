@@ -8,6 +8,7 @@ import { Button } from '@/ui-fenextjs/Button';
 import { Img } from '@/ui-fenextjs/Img';
 import { Link } from '@/ui-fenextjs/Link';
 import { Table } from '@/ui-fenextjs/Table';
+import { Text } from '@/ui-fenextjs/Text';
 import { URL } from '@/url';
 import { parseNumberCount, SvgCheck, SvgClose, SvgTrash } from 'fenextjs';
 
@@ -138,6 +139,13 @@ export const TableProduct = ({ ...props }: TableProductProps) => {
                 {
                     id: 'description',
                     th: 'Descripcion',
+                    parse: (product) => {
+                        return (
+                            <Text useT={false} className="text-table">
+                                {product?.description}
+                            </Text>
+                        );
+                    },
                 },
                 {
                     id: 'status',
