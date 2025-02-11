@@ -31,4 +31,10 @@ export const URL = {
             index: '/product/create',
         },
     },
+    sell: {
+        index: '/sell/',
+        create: {
+            index: '/sell/create',
+        },
+    },
 };

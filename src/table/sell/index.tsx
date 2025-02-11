@@ -1,30 +1,28 @@
-import { useUpdateProduct } from '@/api/product/update';
-import { IProduct } from '@/interface/product';
+import { useUpdateSell } from '@/api/sell/update';
+import { ISell } from '@/interface/sell';
 import { IStatus } from '@/interface/status';
 import { ITable } from '@/interface/table';
 import { parseDateTimeFormat_DD_MM_YY } from '@/parse/Dates';
-import { parseStatus } from '@/parse/Status';
+import { parseStatus, parseStatusPay } from '@/parse/Status';
 import { Button } from '@/ui-fenextjs/Button';
-import { Img } from '@/ui-fenextjs/Img';
 import { Link } from '@/ui-fenextjs/Link';
 import { Table } from '@/ui-fenextjs/Table';
 import { Text } from '@/ui-fenextjs/Text';
 import { URL } from '@/url';
-import { parseNumberCount, SvgCheck, SvgClose, SvgTrash, TableHeader } from 'fenextjs';
+import { parseNumberCount, SvgCheck, SvgClose, SvgTrash } from 'fenextjs';
+import { TableProduct } from '../product';
 
-export interface TableProductProps extends ITable<IProduct> {
-    extraHeader?:TableHeader<IProduct>
-}
+export interface TableSellProps extends ITable<ISell> {}
 
-export const TableProduct = ({ extraHeader=[],...props }: TableProductProps) => {
-    const { mutate, isPending } = useUpdateProduct({});
+export const TableSell = ({ ...props }: TableSellProps) => {
+    const { mutate, isPending } = useUpdateSell({});
     return (
-        <Table<IProduct>
-            name="Productes"
+        <Table<ISell>
+            name="Selles"
             {...props}
             actionsCheckbox={{
                 actions: [
-                    (products) => {
+                    (sells) => {
                         return (
                             <>
                                 <Button
@@ -32,7 +30,7 @@ export const TableProduct = ({ extraHeader=[],...props }: TableProductProps) => 
                                     icon={<SvgCheck />}
                                     onClick={() => {
                                         mutate({
-                                            ids: products?.map((e) => e.id),
+                                            ids: sells?.map((e) => e.id),
                                             status: IStatus.ACTIVE,
                                         });
                                     }}
@@ -44,7 +42,7 @@ export const TableProduct = ({ extraHeader=[],...props }: TableProductProps) => 
                         );
                     },
 
-                    (products) => {
+                    (sells) => {
                         return (
                             <>
                                 <Button
@@ -52,7 +50,7 @@ export const TableProduct = ({ extraHeader=[],...props }: TableProductProps) => 
                                     icon={<SvgClose />}
                                     onClick={() => {
                                         mutate({
-                                            ids: products?.map((e) => e.id),
+                                            ids: sells?.map((e) => e.id),
                                             status: IStatus.INACTIVE,
                                         });
                                     }}
@@ -64,7 +62,7 @@ export const TableProduct = ({ extraHeader=[],...props }: TableProductProps) => 
                         );
                     },
 
-                    (products) => {
+                    (sells) => {
                         return (
                             <>
                                 <Button
@@ -72,7 +70,7 @@ export const TableProduct = ({ extraHeader=[],...props }: TableProductProps) => 
                                     icon={<SvgTrash />}
                                     onClick={() => {
                                         mutate({
-                                            ids: products?.map((e) => e.id),
+                                            ids: sells?.map((e) => e.id),
                                             status: IStatus.DELETE,
                                         });
                                     }}
@@ -89,88 +87,99 @@ export const TableProduct = ({ extraHeader=[],...props }: TableProductProps) => 
                 {
                     id: 'id',
                     th: 'ID',
-                    parse: (product) => {
+                    parse: (sell) => {
                         return (
                             <Link
                                 useT={false}
-                                href={URL.product.index + product.id}
+                                href={URL.sell.index + sell.id}
                             >
-                                {product?.id}
+                                {sell?.id}
                             </Link>
                         );
                     },
                 },
                 {
-                    id: 'id',
-                    th: 'Imagen',
-                    parse: (product) => {
+                    id: 'client',
+                    th: 'Cliente',
+                    parse: (sell) => {
                         return (
                             <Link
                                 useT={false}
-                                href={URL.product.index + product.id}
+                                href={URL.client.index + sell.client?.id}
                             >
-                                <Img
-                                    src={product?.image ?? ''}
-                                    className="img-table"
-                                />
+                                {sell?.client?.name}
                             </Link>
                         );
                     },
                 },
+                
                 {
-                    id: 'name',
-                    th: 'Nombre',
-                    parse: (product) => {
-                        return (
-                            <Link
-                                useT={false}
-                                href={URL.product.index + product.id}
-                            >
-                                {product?.name}
-                            </Link>
-                        );
-                    },
-                },
-                {
-                    id: 'price',
-                    th: 'Precio',
-                    parse: (product) => {
-                        return '$' + parseNumberCount(product?.price);
-                    },
-                },
-                {
-                    id: 'description',
-                    th: 'Descripcion',
-                    parse: (product) => {
-                        return (
-                            <Text useT={false} className="text-table">
-                                {product?.description}
-                            </Text>
-                        );
+                    id: 'total',
+                    th: 'Total',
+                    parse: (sell) => {
+                        return '$' + parseNumberCount(sell?.total);
                     },
                 },
                 {
                     id: 'status',
                     th: 'Estatus',
-                    parse: (product) => {
-                        return parseStatus(product?.status);
+                    parse: (sell) => {
+                        return parseStatus(sell?.status);
+                    },
+                },
+                {
+                    id: 'statusPay',
+                    th: 'Estado de Pago',
+                    parse: (sell) => {
+                        return parseStatusPay(sell?.statusPay);
+                    },
+                },
+                {
+                    id: 'products',
+                    th: 'Productos',
+                    isCollapse:true,
+                    collapseProps:{
+                        header:<>
+                            <Text>Ver Productos</Text>
+                        </>
+                    },
+                    parse: (sell) => {
+                        return (
+                            <TableProduct
+                                items={sell.products?.map(e=>{
+                                    return {
+                                        ...e.product,
+                                        count:e?.count
+                                    }
+                                })}
+                                nItems={sell?.products?.length}
+                                extraHeader={[
+                                    {
+                                        id:"id",
+                                        th:"Cantidad",
+                                        parse: (product) => {
+                                            return 'x'+parseNumberCount((product as any)?.count);
+                                        },
+                                    }
+                                ]}
+                            />
+                        );
                     },
                 },
                 {
                     id: 'createdAt',
                     th: 'Fecha de Creacion',
-                    parse: (product) => {
-                        return parseDateTimeFormat_DD_MM_YY(product?.createdAt);
+                    parse: (sell) => {
+                        return parseDateTimeFormat_DD_MM_YY(sell?.createdAt);
                     },
                 },
                 {
                     id: 'updatedAt',
                     th: 'Fecha de Actualizacion',
-                    parse: (product) => {
-                        return parseDateTimeFormat_DD_MM_YY(product?.updatedAt);
+                    parse: (sell) => {
+                        return parseDateTimeFormat_DD_MM_YY(sell?.updatedAt);
                     },
                 },
-                ...(extraHeader)
             ]}
         />
     );

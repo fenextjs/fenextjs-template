@@ -31,6 +31,10 @@ export const HeaderDashboardLeft = ({}: HeaderDashboardLeftProps) => {
                                 text: 'Productos',
                                 url: URL.product.index,
                             },
+                            {
+                                text: 'Ventas',
+                                url: URL.sell.index,
+                            },
                         ]}
                     />
                 </div>

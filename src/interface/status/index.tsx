@@ -3,3 +3,9 @@ export enum IStatus {
     INACTIVE = 'INACTIVE',
     DELETE = 'DELETE',
 }
+
+export enum IStatusPay {
+    PENDING = 'PENDING',
+    CANCEL = 'CANCEL',
+    PAY = 'PAY',
+}
