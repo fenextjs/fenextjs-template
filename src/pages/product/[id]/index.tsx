@@ -19,7 +19,7 @@ export const PageProductSingle = () => {
                     <Col2Auto>
                         <Img src={data?.image ?? ''} className="img-single" />
                         <Col2Auto>
-                            <Title>Usuario</Title>
+                            <Title>Producto</Title>
                             <Title useT={false}>{data?.name}</Title>
                             <Text>ID</Text>
                             <Text useT={false}>#{data?.id}</Text>
