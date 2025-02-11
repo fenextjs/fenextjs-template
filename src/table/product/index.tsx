@@ -10,13 +10,22 @@ import { Link } from '@/ui-fenextjs/Link';
 import { Table } from '@/ui-fenextjs/Table';
 import { Text } from '@/ui-fenextjs/Text';
 import { URL } from '@/url';
-import { parseNumberCount, SvgCheck, SvgClose, SvgTrash, TableHeader } from 'fenextjs';
+import {
+    parseNumberCount,
+    SvgCheck,
+    SvgClose,
+    SvgTrash,
+    TableHeader,
+} from 'fenextjs';
 
 export interface TableProductProps extends ITable<IProduct> {
-    extraHeader?:TableHeader<IProduct>
+    extraHeader?: TableHeader<IProduct>;
 }
 
-export const TableProduct = ({ extraHeader=[],...props }: TableProductProps) => {
+export const TableProduct = ({
+    extraHeader = [],
+    ...props
+}: TableProductProps) => {
     const { mutate, isPending } = useUpdateProduct({});
     return (
         <Table<IProduct>
@@ -170,7 +179,7 @@ export const TableProduct = ({ extraHeader=[],...props }: TableProductProps) => 
                         return parseDateTimeFormat_DD_MM_YY(product?.updatedAt);
                     },
                 },
-                ...(extraHeader)
+                ...extraHeader,
             ]}
         />
     );

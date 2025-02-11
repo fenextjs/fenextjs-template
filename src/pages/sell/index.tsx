@@ -23,9 +23,7 @@ export const PageSell = () => {
                             <Col1frAuto>
                                 <div>
                                     <Title>Ventas</Title>
-                                    <Text>
-                                        Aqui puedes mirar tus Ventas.
-                                    </Text>
+                                    <Text>Aqui puedes mirar tus Ventas.</Text>
                                 </div>
                                 <Link href={URL.sell.create.index}>
                                     <Button>Crear Venta</Button>

@@ -7,7 +7,8 @@ import { IStatus, IStatusPay } from '@/interface/status';
 import { IApiResult, parseNumber, sleep } from 'fenextjs';
 
 export default ApiEndPoint<IApiResultTable<ISell>>(async (req, res) => {
-    const { search, status,statusPay, ...query } = (req?.query ?? {}) as IApiQuery;
+    const { search, status, statusPay, ...query } = (req?.query ??
+        {}) as IApiQuery;
 
     const npage = parseNumber(query?.npage ?? 10);
     const page = parseNumber(query?.page ?? 0);
@@ -45,28 +46,32 @@ export default ApiEndPoint<IApiResultTable<ISell>>(async (req, res) => {
                 createdAt: new Date().toISOString(),
                 updatedAt: new Date().toISOString(),
                 client,
-                products:[
+                products: [
                     {
                         product,
-                        count:i+1
-                    }
-                ]
+                        count: i + 1,
+                    },
+                ],
             };
             return r;
         })
         .filter((e) => {
-            let sw = true
+            let sw = true;
             if (search) {
                 return (
-                    e?.client?.name?.toLowerCase().includes(search.toLowerCase()) ||
-                    search?.toLowerCase().includes(e?.client?.name.toLowerCase()) 
+                    e?.client?.name
+                        ?.toLowerCase()
+                        .includes(search.toLowerCase()) ||
+                    search
+                        ?.toLowerCase()
+                        .includes(e?.client?.name.toLowerCase())
                 );
             }
             if (status) {
-                sw&&= e?.status == status;
+                sw &&= e?.status == status;
             }
             if (statusPay) {
-                sw&&= e?.statusPay == statusPay;
+                sw &&= e?.statusPay == statusPay;
             }
             return sw;
         })

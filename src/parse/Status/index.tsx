@@ -14,9 +14,9 @@ export const parseStatus = parseEnum_to_String<IStatus>(
 
 export const parseStatusPay = parseEnum_to_String<IStatusPay>(
     {
-        CANCEL:"Cancelado",
-        PAY:"Pagado",
-        PENDING:"Pendiente"
+        CANCEL: 'Cancelado',
+        PAY: 'Pagado',
+        PENDING: 'Pendiente',
     },
     {
         valueNull: 'No disponible',

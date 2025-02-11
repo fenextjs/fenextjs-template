@@ -5,7 +5,9 @@ import { InputSelectT, InputSelectTProps } from '@/ui-fenextjs/Input/SelectT';
 export interface InputSelectStatusPayProps
     extends Omit<InputSelectTProps<IStatusPay>, 'onParse' | 'options'> {}
 
-export const InputSelectStatusPay = ({ ...props }: InputSelectStatusPayProps) => {
+export const InputSelectStatusPay = ({
+    ...props
+}: InputSelectStatusPayProps) => {
     return (
         <InputSelectT<IStatusPay>
             {...props}

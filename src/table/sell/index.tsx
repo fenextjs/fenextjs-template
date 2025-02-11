@@ -89,10 +89,7 @@ export const TableSell = ({ ...props }: TableSellProps) => {
                     th: 'ID',
                     parse: (sell) => {
                         return (
-                            <Link
-                                useT={false}
-                                href={URL.sell.index + sell.id}
-                            >
+                            <Link useT={false} href={URL.sell.index + sell.id}>
                                 {sell?.id}
                             </Link>
                         );
@@ -112,7 +109,7 @@ export const TableSell = ({ ...props }: TableSellProps) => {
                         );
                     },
                 },
-                
+
                 {
                     id: 'total',
                     th: 'Total',
@@ -137,30 +134,37 @@ export const TableSell = ({ ...props }: TableSellProps) => {
                 {
                     id: 'products',
                     th: 'Productos',
-                    isCollapse:true,
-                    collapseProps:{
-                        header:<>
-                            <Text>Ver Productos</Text>
-                        </>
+                    isCollapse: true,
+                    collapseProps: {
+                        header: (
+                            <>
+                                <Text>Ver Productos</Text>
+                            </>
+                        ),
                     },
                     parse: (sell) => {
                         return (
                             <TableProduct
-                                items={sell.products?.map(e=>{
+                                items={sell.products?.map((e) => {
                                     return {
                                         ...e.product,
-                                        count:e?.count
-                                    }
+                                        count: e?.count,
+                                    };
                                 })}
                                 nItems={sell?.products?.length}
                                 extraHeader={[
                                     {
-                                        id:"id",
-                                        th:"Cantidad",
+                                        id: 'id',
+                                        th: 'Cantidad',
                                         parse: (product) => {
-                                            return 'x'+parseNumberCount((product as any)?.count);
+                                            return (
+                                                'x' +
+                                                parseNumberCount(
+                                                    (product as any)?.count,
+                                                )
+                                            );
                                         },
-                                    }
+                                    },
                                 ]}
                             />
                         );
