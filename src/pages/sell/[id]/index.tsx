@@ -21,14 +21,12 @@ export const PageSellSingle = () => {
                     <Col2Auto>
                         <Title>Venta</Title>
                         <Title useT={false}>#{data?.id}</Title>
-                        <Text>Total</Text>
-                        <Text useT={false}>
-                            {parseNumberCount(data?.total ?? 0)}
-                        </Text>
+                        <Title>Total</Title>
+                        <Title useT={false}>
+                            ${parseNumberCount(data?.total ?? 0)}
+                        </Title>
                         <Text>Estatus</Text>
-                        <Text useT={false}>
-                            {parseStatus(data?.status)}
-                        </Text>
+                        <Text useT={false}>{parseStatus(data?.status)}</Text>
                         <Text>Estado de Pago</Text>
                         <Text useT={false}>
                             {parseStatusPay(data?.statusPay)}

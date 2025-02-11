@@ -25,7 +25,7 @@ export const PageProductSingle = () => {
                             <Text useT={false}>#{data?.id}</Text>
                             <Text>Precio</Text>
                             <Text useT={false}>
-                                {parseNumberCount(data?.price ?? 0)}
+                                ${parseNumberCount(data?.price ?? 0)}
                             </Text>
                             <Text>Estatus</Text>
                             <Text useT={false}>
