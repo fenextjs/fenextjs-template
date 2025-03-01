@@ -29,7 +29,7 @@
     "u": "npm run update && git add . && git commit -m update && git push"
   },
   "dependencies": {
-    "fenextjs": "15.6.3",
+    "fenextjs": "15.6.6",
     "next": "14.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"
