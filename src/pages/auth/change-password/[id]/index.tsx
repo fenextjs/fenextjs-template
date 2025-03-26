@@ -1,10 +1,10 @@
 import { FormChangePassword } from '@/components/Form/ChangePassword';
 import { LayoutLogin } from '@/layout/Login';
-import { useQuery } from 'fenextjs';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 export const PageChangePassword = () => {
-    const { query, load } = useQuery();
+    const router = useRouter();
 
     return (
         <>
@@ -12,10 +12,10 @@ export const PageChangePassword = () => {
                 <title>Cambiar Contraseña</title>
             </Head>
             <LayoutLogin>
-                {load && (
+                {router.isReady && (
                     <FormChangePassword
                         defaultValue={{
-                            token: query?.id ?? '',
+                            token: `${router?.query?.id ?? ''}`,
                             password: '',
                             repeactPassword: '',
                         }}
