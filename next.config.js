@@ -12,6 +12,27 @@
 
 module.exports = {
     // reactStrictMode: true,
+    async headers() {
+      return [
+        {
+          source: '/:path*',
+          headers: [
+            {
+              key: 'Access-Control-Allow-Origin',
+              value: 'https://fenextjs-template-vite.vercel.app', // O '*'
+            },
+            {
+              key: 'Access-Control-Allow-Methods',
+              value: 'GET, POST, PUT, DELETE, OPTIONS',
+            },
+            {
+              key: 'Access-Control-Allow-Headers',
+              value: 'X-Requested-With, Content-Type, Authorization',
+            },
+          ],
+        },
+      ];
+    },
     webpack: (config) => {
         // Ignora archivos o directorios específicos al hacer build
         config.module.rules.push({
