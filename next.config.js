@@ -15,11 +15,11 @@ module.exports = {
     async headers() {
       return [
         {
-          source: '/:path*',
+          source: '/api/:path*',
           headers: [
             {
               key: 'Access-Control-Allow-Origin',
-              value: 'https://fenextjs-template-vite.vercel.app', // O '*'
+              value: '*', // Permite cualquier origen
             },
             {
               key: 'Access-Control-Allow-Methods',
@@ -27,7 +27,7 @@ module.exports = {
             },
             {
               key: 'Access-Control-Allow-Headers',
-              value: 'X-Requested-With, Content-Type, Authorization',
+              value: 'Content-Type, Authorization',
             },
           ],
         },
