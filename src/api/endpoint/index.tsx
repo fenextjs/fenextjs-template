@@ -18,7 +18,7 @@ function initMiddleware(middleware: any) {
 const cors = initMiddleware(
     Cors({
         methods: ['GET', 'POST', 'OPTIONS'],
-        origin: '*', // o un array con múltiples orígenes
+        origin: ['http://localhost:3000', 'https://fenextjs-template-vite.vercel.app/'], // o un array con múltiples orígenes
         credentials: true,
     }),
 );
@@ -30,12 +30,12 @@ export const ApiEndPoint =
             res: NextApiResponse<IApiRespond<T>>,
         ) => Promise<void>,
     ) =>
-    async (req: NextApiRequest, res: NextApiResponse<IApiRespond<T>>) => {
-        try {
-            await cors(req, res);
-            await endpoint(req, res);
-        } catch (err: any) {
-            const error: ErrorFenextjs = err;
-            res.status(500).json({ error, message: error?.msg ?? '' });
-        }
-    };
+        async (req: NextApiRequest, res: NextApiResponse<IApiRespond<T>>) => {
+            try {
+                await cors(req, res);
+                await endpoint(req, res);
+            } catch (err: any) {
+                const error: ErrorFenextjs = err;
+                res.status(500).json({ error, message: error?.msg ?? '' });
+            }
+        };
