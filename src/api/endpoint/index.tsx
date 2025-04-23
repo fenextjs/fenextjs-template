@@ -3,6 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import Cors from 'cors'
 
 // Inicializar el middleware
+
 function initMiddleware(middleware: any) {
     return (req: any, res: any) =>
       new Promise((resolve, reject) => {
