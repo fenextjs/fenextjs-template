@@ -30,12 +30,12 @@ export const ApiEndPoint =
             res: NextApiResponse<IApiRespond<T>>,
         ) => Promise<void>,
     ) =>
-        async (req: NextApiRequest, res: NextApiResponse<IApiRespond<T>>) => {
-            try {
-                await cors(req, res);
-                await endpoint(req, res);
-            } catch (err: any) {
-                const error: ErrorFenextjs = err;
-                res.status(500).json({ error, message: error?.msg ?? '' });
-            }
-        };
+    async (req: NextApiRequest, res: NextApiResponse<IApiRespond<T>>) => {
+        try {
+            await cors(req, res);
+            await endpoint(req, res);
+        } catch (err: any) {
+            const error: ErrorFenextjs = err;
+            res.status(500).json({ error, message: error?.msg ?? '' });
+        }
+    };

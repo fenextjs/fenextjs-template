@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "fenextjs": "16.0.3",
+    "fenextjs": "16.0.4",
     "next": "14.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"
