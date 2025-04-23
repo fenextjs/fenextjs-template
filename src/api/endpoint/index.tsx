@@ -18,7 +18,8 @@ function initMiddleware(middleware: any) {
 const cors = initMiddleware(
     Cors({
         methods: ['GET', 'POST', 'OPTIONS'],
-        origin: ['http://localhost:3000', 'https://fenextjs-template-vite.vercel.app/'], // o un array con múltiples orígenes
+        origin: ['http://localhost:3000', 'https://fenextjs-template-vite.vercel.app/',
+            'https://fenextjs-template-nextjs.vercel.app/'], // o un array con múltiples orígenes
         credentials: true,
     }),
 );
